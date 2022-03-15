@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/quiz-app', {
   const seedQuestions = [
     {
       question: 'What are the top two most popular spices in the world?',
-      options: ['salt and pepper', 'turmeric and curry', 'star anise and ginger', 'Pepper and Mustard'],
+      options: ['Salt and Pepper', 'Turmeric and Curry', 'Star Anise and Ginger', 'Pepper and Mustard'],
       correct_option: 'Pepper and Mustard',
       triviaId: '6230a31af7362ad137b10797'
     },
