@@ -10,8 +10,8 @@ const QuestionSchema = new Schema({
     type: Array,
     required: true
   },
-  correctOption: {
-    type: Array,
+  correct_option: {
+    type: String,
     required: true
   },
   created_at: {
@@ -21,4 +21,4 @@ const QuestionSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Question', QuestionSchema)
+module.exports = mongoose.model('Question', QuestionSchema);

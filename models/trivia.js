@@ -20,12 +20,8 @@ const TriviaSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Question'
     }
-  ],
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
+  ]
 });
 
 
-module.exports = mongoose.model('Trivia', TriviaSchema)
+module.exports = mongoose.model('Trivia', TriviaSchema);
