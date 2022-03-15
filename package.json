@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/victhall/quiz-app/issues"
   },
-  "homepage": "https://github.com/victhall/quiz-app#readme"
+  "homepage": "https://github.com/victhall/quiz-app#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }

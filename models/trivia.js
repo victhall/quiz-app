@@ -14,13 +14,7 @@ const TriviaSchema = new Schema({
     type: Boolean,
     default: true,
     required: true
-  },
-  questions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Question'
-    }
-  ]
+  }
 });
 
 

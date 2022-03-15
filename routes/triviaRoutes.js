@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Trivia = require('../models/trivia')
+const Question = require('../models/questions')
 
 router.get('/')
 
@@ -13,8 +14,8 @@ router.get('/:id', async (req, res) => {
 
 router.get('/:id/play', async (req, res) => {
   const { id } = req.params;
-  const trivias = await Trivia.findById(id)
-  res.render('trivia/play', {trivias})
+  const questions = await Question.find({id})
+  res.render('trivia/play', {questions})
 })
 
 module.exports = router;

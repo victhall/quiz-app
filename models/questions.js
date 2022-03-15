@@ -17,6 +17,10 @@ const QuestionSchema = new Schema({
   created_at: {
     type: Date,
     default: Date.now
+  },
+  triviaId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Trivia'
   }
 });
 
