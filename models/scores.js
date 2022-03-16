@@ -11,29 +11,6 @@ const ScoreSchema = new Schema({
     ref: 'Trivia'
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   // player: {
   //   type: Schema.Types.ObjectId,
   //   ref: 'User'

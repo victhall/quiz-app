@@ -8,10 +8,9 @@
 </head>
 <body>
   <h1>TRIVIA PAGE</h1>
-  <% for (let trivia of trivias) {%>
     <%= trivia.title %>
     <%= trivia.description %>
-    <a href="">Take the quiz</a>
-      <% }%>
+    <a href="/trivia/<%=trivia._id%>/play">Take the quiz</a>
+
 </body>
 </html>
