@@ -46,7 +46,7 @@ router.post('/:id/play', async (req, res, next) => {
   console.log(count);
 
   // console.log('correct asnwers', correctAnswers)
-  res.redirect('/')
+  res.render('trivia/score', {trivia, count, correctAnswers})
 
 
 });
