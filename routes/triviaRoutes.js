@@ -43,8 +43,6 @@ router.post('/:id/play', async (req, res, next) => {
   console.log(result);
   const count = result.filter(Boolean).length;
 
-  console.log(count);
-
   // console.log('correct asnwers', correctAnswers)
   res.render('trivia/score', {trivia, count, correctAnswers})
 
