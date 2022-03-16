@@ -6,10 +6,38 @@ const ScoreSchema = new Schema({
     type: Number,
     required: true
   },
-  player: {
+  triviaId: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
+    ref: 'Trivia'
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  // player: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // }
 });
 
 
