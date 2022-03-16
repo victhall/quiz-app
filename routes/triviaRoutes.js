@@ -12,6 +12,11 @@ router.get('/', async(req, res)=>{
   res.render('trivia/index', { trivias })
 })
 
+//new form
+router.get('/new', async(req, res)=>{
+  res.render('trivia/new')
+})
+
 //show
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
@@ -54,6 +59,8 @@ router.post('/:id/play', async (req, res, next) => {
   console.log('correct asnwers', correctAnswers)
   res.render('trivia/score', {trivia, count, correctAnswers})
 });
+
+
 
 module.exports = router;
 
