@@ -14,21 +14,23 @@
 
   <% for (let question of questions) {%>
     <div>
-      <%= question.question%>
+      <%= question.question %>
     </div>
     <form action="/trivia/<%=trivia[0]._id%>/play" method="POST">
       <%for (let option of question.options) {%>
         <input type="radio" name="<%= question._id%>" value="<%= option%>">
-        <%= option%>
+        <%= option %>
           </input>
           <% }%>
 
-          <div>
-            
+            <div>
+
+            </div>
+
             <button>Submit</button>
-          </div>
-        </form>
-        <%}%>
+            <%}%>
+    </form>
+
 
 
 </body>

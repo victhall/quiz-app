@@ -18,12 +18,12 @@ router.get('/:id/play', async (req, res) => {
   const trivia = await Trivia.find({id});
   console.log('TRIVIA', trivia);
   console.log('TRIVIA TITLE', trivia[0].title);
-
+  console.log('QUESTIONS', questions)
   // console.log('CORRECT ANSWER', correctAnswer);
   res.render('trivia/play', { questions, trivia })
 });
 
-router.post('/:id/play', async (req, res) => {
+router.post('/:id/play', async (req, res, next) => {
   const { id } = req.params;
   const trivia = await Trivia.find({id});
   const questions = await Question.find({ id });
@@ -39,7 +39,7 @@ router.post('/:id/play', async (req, res) => {
       console.log('FALSE')
     }
   }
-  // res.redirect('/')
+  res.redirect('/')
 
 
 });
