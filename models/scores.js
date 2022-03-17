@@ -9,12 +9,7 @@ const ScoreSchema = new Schema({
   triviaId: {
     type: Schema.Types.ObjectId,
     ref: 'Trivia'
-  },
-
-  // player: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'User'
-  // }
+  }
 });
 
 
