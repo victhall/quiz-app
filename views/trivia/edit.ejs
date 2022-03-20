@@ -14,158 +14,225 @@
 
   <div class="col-6 offset-3">
     <h1>Edit Quiz Form</h1>
-    <form method="" action="">
+    <form method="POST" action="/trivia/<%= trivia._id%>?_method=PUT">
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Quiz Title</label>
-          <input type="text" class="form-control" name="title" id="exampleFormControlInput1" placeholder="Title"
-            required>
+          <label for="title" class="form-label">Quiz Title</label>
+          <input type="text" class="form-control" name="title" id="title" placeholder="Title"
+            value="<%= trivia.title %>" required>
         </div>
       </section>
 
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-          <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"
-            required></textarea>
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" name="description" id="description" rows="3"
+            required> <%= trivia.description %></textarea>
+        </div>
+      </section>
+
+      <div>
+        <input type="radio" name="is_public" value="true" checked /> Quiz is public
+      </div>
+      <div class="private">
+        <input type="radio" name="is_public" value="false" /> Quiz is private
+      </div>
+
+      <section class="form-box">
+        <div class="mb-3">
+          <label for="question" class="form-label">Question 1</label>
+          <input type="text" class="form-control" name="question" id="question" placeholder="Question"
+            value="<%= questions[0].question %>" required>
+        </div>
+        <div class="mb-3">
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options" id="options"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[0].options[0] %>" required>
+          <input type="text" class="form-control" name="options" id="options"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[0].options[1] %>" required>
+          <input type="text" class="form-control" name="options" id="options"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[0].options[2] %>" required>
+          <input type="text" class="form-control" name="options" id="options"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[0].options[3] %>" required>
+        </div>
+        <div class="mb-3">
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option" id="correct_option" placeholder=""
+            value="<%= questions[0].correct_option %>" required>
         </div>
       </section>
 
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 1</label>
-          <input type="text" class="form-control" name="question-1" id="exampleFormControlInput1" placeholder="Question"
-            required>
+          <label for="question" class="form-label">Question 2</label>
+          <input type="text" class="form-control" name="question2" id="question2" placeholder="Question"
+            value="<%= questions[1].question %>" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-1" id="exampleFormControlInput1"
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options2" id="options2"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[1].options[0] %>" required>
+          <input type="text" class="form-control" name="options2" id="options2"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[1].options[1] %>" required>
+          <input type="text" class="form-control" name="options2" id="options2"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[1].options[2] %>" required>
+          <input type="text" class="form-control" name="options2" id="options2"
+            placeholder="Option 1, Option 2, Option 3, Option 4" value="<%= questions[1].options[3] %>" required>
+        </div>
+        <div class="mb-3">
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option2" id="correct_option2" placeholder="" value="<%=questions[1].correct_option%>" required>
+        </div>
+      </section>
+
+      <section class="form-box">
+        <div class="mb-3">
+          <label for="question" class="form-label">Question 3</label>
+          <input type="text" class="form-control" name="question3" id="question3" placeholder="Question"
+            value="<%=questions[2].question%>" required>
+        </div>
+        <div class="mb-3">
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options3" id="options3" value="<%=questions[2].options[0]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options3" id="options3" value="<%=questions[2].options[1]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options3" id="options3" value="<%=questions[2].options[2]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options3" id="options3" value="<%=questions[2].options[3]%>"
             placeholder="Option 1, Option 2, Option 3, Option 4" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-1" id="exampleFormControlInput1" placeholder="" required>
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option3" id="correct_option3" placeholder=""
+            value="<%=questions[2].correct_option%>" required>
         </div>
       </section>
 
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 2</label>
-          <input type="text" class="form-control" name="question-2" id="exampleFormControlInput1"
-            placeholder="Question" required>
+          <label for="question" class="form-label">Question 4</label>
+          <input type="text" class="form-control" name="question4" id="question4" placeholder="Question"
+            value="<%=questions[3].question%>" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-2" id="exampleFormControlInput1"
-            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options4" id="options4" value="<%=questions[3].options[0]%>"
+            placeholder=" Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options4" id="options4" value="<%=questions[3].options[1]%>"
+            placeholder=" Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options4" id="options4" value="<%=questions[3].options[2]%>"
+            placeholder=" Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options4" id="options4" value="<%=questions[3].options[3]%>"
+            placeholder=" Option 1, Option 2, Option 3, Option 4" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-2" id="exampleFormControlInput1" placeholder="" required>
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option4" id="correct_option4" placeholder=""
+            value="<%=questions[3].correct_option%>" required>
         </div>
       </section>
 
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 3</label>
-          <input type="text" class="form-control" name="question-3" id="exampleFormControlInput1"
-            placeholder="Question" required>
+          <label for="question" class="form-label">Question 5</label>
+          <input type="text" class="form-control" name="question5" id="question5" placeholder="Question"
+            value="<%=questions[4].question%>" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-3" id="exampleFormControlInput1"
-            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options5" id="options5" value="<%=questions[4].options[0]%>"
+            placeholder="" Option 1, Option 2, Option 3, Option 4 required>
+          <input type="text" class="form-control" name="options5" id="options5" value="<%=questions[4].options[1]%>"
+            placeholder="" Option 1, Option 2, Option 3, Option 4 required>
+          <input type="text" class="form-control" name="options5" id="options5" value="<%=questions[4].options[2]%>"
+            placeholder="" Option 1, Option 2, Option 3, Option 4 required>
+          <input type="text" class="form-control" name="options5" id="options5" value="<%=questions[4].options[3]%>"
+            placeholder="" Option 1, Option 2, Option 3, Option 4 required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-3" id="exampleFormControlInput1" placeholder="" required>
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option5" id="correct_option5" placeholder=""
+            value="<%=questions[4].correct_option%>" required>
         </div>
       </section>
 
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 4</label>
-          <input type="text" class="form-control" name="question-4" id="exampleFormControlInput1"
-            placeholder="Question" required>
+          <label for="question" class="form-label">Question 6</label>
+          <input type="text" class="form-control" name="question6" id="question6" placeholder="Question"
+            value="<%=questions[5].question%>" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-4" id="exampleFormControlInput1"
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options6" id="options6" value="<%=questions[5].options[0]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options6" id="options6" value="<%=questions[5].options[1]%>"
+            placeholder=" Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options6" id="options6" value="<%=questions[5].options[2]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options6" id="options6" value="<%=questions[5].options[3]%>"
             placeholder="Option 1, Option 2, Option 3, Option 4" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-4" id="exampleFormControlInput1" placeholder="" required>
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option6" id="correct_option6" placeholder=""
+            value="<%=questions[5].correct_option%>" required>
         </div>
       </section>
 
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 5</label>
-          <input type="text" class="form-control" name="question-5" id="exampleFormControlInput1"
-            placeholder="Question" required>
+          <label for="question" class="form-label">Question 7</label>
+          <input type="text" class="form-control" name="question7" id="question7" placeholder="Question"
+            value="<%=questions[6].question%>" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-5" id="exampleFormControlInput1"
-            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options7" id="options7" value="<%=questions[6].options[0]%>"
+            placeholder="" Option 1, Option 2, Option 3, Option 4 required>
+          <input type="text" class="form-control" name="options7" id="options7" value="<%=questions[6].options[1]%>"
+            placeholder="" Option 1, Option 2, Option 3, Option 4 required>
+          <input type="text" class="form-control" name="options7" id="options7" value="<%=questions[6].options[2]%>"
+            placeholder="" Option 1, Option 2, Option 3, Option 4 required>
+          <input type="text" class="form-control" name="options7" id="options7" value="<%=questions[6].options[3]%>"
+            placeholder=" Option 1, Option 2, Option 3, Option 4" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-5" id="exampleFormControlInput1" placeholder="" required>
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option7" id="correct_option7"
+            value="<%=questions[6].correct_option%>" placeholder="" required>
         </div>
       </section>
 
       <section class="form-box">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 6</label>
-          <input type="text" class="form-control" name="question-6" id="exampleFormControlInput1"
-            placeholder="Question" required>
+          <label for="question" class="form-label">Question 8</label>
+          <input type="text" class="form-control" name="question8" id="question8" placeholder="Question"
+            value="<%=questions[7].question%>" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-6" id="exampleFormControlInput1"
+          <label for="option" class="form-label">Option</label>
+          <input type="text" class="form-control" name="options8" id="options8" value="<%=questions[7].options[0]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options8" id="options8" value="<%=questions[7].options[1]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options8" id="options8" value="<%=questions[7].options[2]%>"
+            placeholder="Option 1, Option 2, Option 3, Option 4" required>
+          <input type="text" class="form-control" name="options8" id="options8" value="<%=questions[7].options[3]%>"
             placeholder="Option 1, Option 2, Option 3, Option 4" required>
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-6" id="exampleFormControlInput1" placeholder="" required>
+          <label for="correct_option" class="form-label">Correct Answer</label>
+          <input type="text" class="form-control" name="correct_option8" id="correct_option8"
+            value="<%=questions[7].correct_option%>" placeholder="" required>
         </div>
       </section>
 
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 7</label>
-          <input type="text" class="form-control" name="question-7" id="exampleFormControlInput1"
-            placeholder="Question" required>
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-7" id="exampleFormControlInput1"
-            placeholder="Option 1, Option 2, Option 3, Option 4" required>
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-7" id="exampleFormControlInput1" placeholder="" required>
-        </div>
-      </section>
 
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Question 8</label>
-          <input type="text" class="form-control" name="question-8" id="exampleFormControlInput1"
-            placeholder="Question" required>
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Option</label>
-          <input type="text" class="form-control" name="option-8" id="exampleFormControlInput1"
-            placeholder="Option 1, Option 2, Option 3, Option 4" required>
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct-8" id="exampleFormControlInput1" placeholder="" required>
-        </div>
-      </section>
+
+
+
 
 
       <button class="mt-5 mb-5 col-6 offset-3">Update</button>
