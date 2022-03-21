@@ -12,5 +12,8 @@
     <%= trivia.description %>
     <a href="/trivia/<%=trivia._id%>/play">Take the quiz</a>
 
+    <form action="/trivia/<%=trivia._id%>?_method=DELETE" method="POST">
+      <button>DELETE</button>
+      </form>
 </body>
 </html>

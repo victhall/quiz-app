@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Trivia = require('../models/trivia')
 const Question = require('../models/questions')
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
 
 //index
 router.get('/', async (req, res) => {
@@ -56,14 +58,14 @@ router.put('/:id', async (req, res) => {
   const example7 = questions[6]._id
   const example8 = questions[7]._id
 
-  Question.findByIdAndUpdate(example, { $set: {question: req.body.question, options: req.body.options, correct: req.body.correct_options} }).exec();
-  Question.findByIdAndUpdate(example2, { $set: {question: req.body.question2, options: req.body.options2, correct: req.body.correct_option2} }).exec();
-  Question.findByIdAndUpdate(example3, { $set: {question: req.body.question3, options: req.body.options3, correct: req.body.correct_options3} }).exec();
-  Question.findByIdAndUpdate(example4, { $set: {question: req.body.question4, options: req.body.options4, correct: req.body.correct_options4} }).exec();
-  Question.findByIdAndUpdate(example5, { $set: {question: req.body.question5, options: req.body.options5, correct: req.body.correct_options5} }).exec();
-  Question.findByIdAndUpdate(example6, { $set: {question: req.body.question6, options: req.body.options6, correct: req.body.correct_options6} }).exec();
-  Question.findByIdAndUpdate(example7, { $set: {question: req.body.question7, options: req.body.options7, correct: req.body.correct_options7} }).exec();
-  Question.findByIdAndUpdate(example8, { $set: {question: req.body.question8, options: req.body.options8, correct: req.body.correct_options8} }).exec();
+  Question.findByIdAndUpdate(example, { $set: { question: req.body.question, options: req.body.options, correct: req.body.correct_options } }).exec();
+  Question.findByIdAndUpdate(example2, { $set: { question: req.body.question2, options: req.body.options2, correct: req.body.correct_option2 } }).exec();
+  Question.findByIdAndUpdate(example3, { $set: { question: req.body.question3, options: req.body.options3, correct: req.body.correct_options3 } }).exec();
+  Question.findByIdAndUpdate(example4, { $set: { question: req.body.question4, options: req.body.options4, correct: req.body.correct_options4 } }).exec();
+  Question.findByIdAndUpdate(example5, { $set: { question: req.body.question5, options: req.body.options5, correct: req.body.correct_options5 } }).exec();
+  Question.findByIdAndUpdate(example6, { $set: { question: req.body.question6, options: req.body.options6, correct: req.body.correct_options6 } }).exec();
+  Question.findByIdAndUpdate(example7, { $set: { question: req.body.question7, options: req.body.options7, correct: req.body.correct_options7 } }).exec();
+  Question.findByIdAndUpdate(example8, { $set: { question: req.body.question8, options: req.body.options8, correct: req.body.correct_options8 } }).exec();
 
   await trivia.save();
   res.redirect(`/trivia/${trivia._id}`);
@@ -73,7 +75,7 @@ router.put('/:id', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id)
-  console.log(trivia)
+  // console.log(trivia)
   res.render('trivia/show', { trivia })
 });
 
@@ -82,6 +84,7 @@ router.get('/:id/play', async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id);
   const questions = await Question.find({ triviaId: id })
+  console.log('questions', questions)
   res.render('trivia/play', { questions, trivia })
 });
 
@@ -103,6 +106,13 @@ router.post('/:id/play', async (req, res, next) => {
   console.log('correct asnwers', correctAnswers)
   res.render('trivia/score', { trivia, count, correctAnswers })
 });
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  await Question.deleteMany({triviaId: id})
+  await Trivia.findByIdAndDelete(id);
+  res.redirect('/trivia');
+})
 
 
 module.exports = router;

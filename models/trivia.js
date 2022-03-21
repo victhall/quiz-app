@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Question = require('./questions');
 
 const TriviaSchema = new Schema({
-  title: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  is_public: {
-    type: Boolean,
-    default: true,
-    required: true
-  }
+	title: {
+		type: String,
+		required: true
+	},
+	description: {
+		type: String,
+		required: true
+	},
+	is_public: {
+		type: Boolean,
+		default: true,
+		required: true
+	}
 });
 
 
