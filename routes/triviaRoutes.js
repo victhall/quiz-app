@@ -3,7 +3,7 @@ const router = express.Router();
 const Trivia = require('../models/trivia')
 const Question = require('../models/questions')
 const mongoose = require('mongoose');
-const ObjectId = mongoose.Types.ObjectId;
+const { isLoggedIn, isOwner } = require('../helpers')
 
 //index
 router.get('/', async (req, res) => {
@@ -12,12 +12,12 @@ router.get('/', async (req, res) => {
 });
 
 //new form
-router.get('/new', async (req, res) => {
+router.get('/new', isLoggedIn, async (req, res) => {
   res.render('trivia/new')
 });
 
 //post form
-router.post('/new', async (req, res) => {
+router.post('/new', isLoggedIn, async (req, res) => {
   const trivia = new Trivia({
     title: req.body.title,
     description: req.body.description,
@@ -38,14 +38,14 @@ router.post('/new', async (req, res) => {
 })
 
 //edit form
-router.get('/:id/edit', async (req, res) => {
+router.get('/:id/edit', isLoggedIn, isOwner, async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id);
   const questions = await Question.find({ triviaId: id });
   res.render('trivia/edit', { trivia, questions })
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', isLoggedIn, isOwner, async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findByIdAndUpdate(id, { ...req.body });
   const questions = await Question.find({ triviaId: id });
@@ -107,7 +107,7 @@ router.post('/:id/play', async (req, res, next) => {
   res.render('trivia/score', { trivia, count, correctAnswers })
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', isLoggedIn, isOwner, async (req, res) => {
   const { id } = req.params;
   await Question.deleteMany({triviaId: id})
   await Trivia.findByIdAndDelete(id);
@@ -116,5 +116,3 @@ router.delete('/:id', async (req, res) => {
 
 
 module.exports = router;
-
-

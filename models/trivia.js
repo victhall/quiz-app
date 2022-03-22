@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Question = require('./questions');
 
 const TriviaSchema = new Schema({
 	title: {
@@ -15,6 +14,10 @@ const TriviaSchema = new Schema({
 		type: Boolean,
 		default: true,
 		required: true
+	},
+	owner: {
+		type: Schema.Types.ObjectId,
+		ref: 'User'
 	}
 });
 
