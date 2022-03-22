@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/users');
+const { catchAsync } = require('../helpers')
 
-router.get('/register', async (req, res) => {
+router.get('/register', catchAsync(async (req, res) => {
   res.render('users/register')
-})
+}));
 
-
-router.post('/register', async (req, res) => {
+router.post('/register', catchAsync(async (req, res) => {
   try {
     const { username, email, password } = req.body;
     const user = new User({ email, username })
@@ -21,21 +21,21 @@ router.post('/register', async (req, res) => {
   } catch (e) {
     res.redirect('/register')
   }
-});
+}));
 
-router.get('/login', async (req, res) => {
+router.get('/login', catchAsync(async (req, res) => {
   res.render('users/login')
-})
+}));
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
   const redirectUrl = req.session.returnTo || '/trivia';
   delete req.session.returnTo;
   res.redirect(redirectUrl);
-})
+});
 
-router.get('/logout', async (req, res) => {
+router.get('/logout', catchAsync(async (req, res) => {
   req.logout();
   res.redirect('/trivia');
-})
+}));
 
 module.exports = router;

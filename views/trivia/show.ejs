@@ -17,8 +17,11 @@
     <%= trivia.description %>
     <a href="/trivia/<%=trivia._id%>/play">Take the quiz</a>
 
+    <% if (currentUser && trivia.owner.equals(currentUser._id)) {%>
     <form action="/trivia/<%=trivia._id%>?_method=DELETE" method="POST">
       <button>DELETE</button>
       </form>
+      <% } %>
+
 </body>
 </html>
