@@ -21,7 +21,8 @@ router.post('/new', isLoggedIn, async (req, res) => {
   const trivia = new Trivia({
     title: req.body.title,
     description: req.body.description,
-    is_public: req.body.is_public
+    is_public: req.body.is_public,
+    owner: req.user._id
   })
   Question.insertMany([
     { question: req.body.question, options: req.body.options, correct_option: req.body.correct_option, triviaId: trivia._id },
