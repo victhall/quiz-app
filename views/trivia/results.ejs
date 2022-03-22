@@ -12,7 +12,7 @@
 <body>
   <%- include('../../views/partials/navbar.ejs') %>
 
-  <% for (let score of scores){%>
+  <% for (let score of scores.reverse()){%>
     <div>
       <%= score.triviaTitle %>
     </div>
