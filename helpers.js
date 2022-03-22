@@ -24,4 +24,5 @@ const catchAsync = func => {
   }
 }
 
+
 module.exports = { isLoggedIn, isOwner, catchAsync }

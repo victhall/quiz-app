@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Trivia = require('../models/trivia')
 const Question = require('../models/questions')
+const Score = require('../models/scores')
 const mongoose = require('mongoose');
 const { isLoggedIn, isOwner, catchAsync } = require('../helpers')
 
@@ -104,8 +105,18 @@ router.post('/:id/play', catchAsync(async (req, res, next) => {
   console.log(result);
   const count = result.filter(Boolean).length;
 
-  console.log('correct asnwers', correctAnswers)
-  res.render('trivia/score', { trivia, count, correctAnswers })
+  const scores = await Score.create({
+    achievements: count,
+    triviaId: id,
+    user: req.user._id,
+    triviaTitle: trivia.title,
+    date: new Date
+  })
+
+  console.log('SCORE------', scores)
+  console.log('points------', scores.achievements) 
+  // console.log('correct asnwers', correctAnswers)
+  res.render('trivia/score', { trivia, count, correctAnswers, scores })
 }));
 
 router.delete('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {

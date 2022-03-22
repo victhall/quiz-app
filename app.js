@@ -65,10 +65,12 @@ app.use((req, res, next) => {
 
 const triviaRouter = require('./routes/triviaRoutes');
 const usersRouter = require('./routes/userRoutes');
+const resultsRouter = require('./routes/resultRoutes');
 
 
 app.use('/trivia', triviaRouter);
 app.use('/users', usersRouter);
+app.use('/results', resultsRouter);
 
 
 const PORT = 3000;

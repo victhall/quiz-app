@@ -9,8 +9,18 @@ const ScoreSchema = new Schema({
   triviaId: {
     type: Schema.Types.ObjectId,
     ref: 'Trivia'
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  triviaTitle: {
+    type: String
+  },
+  date: {
+    type: Date,
+    default: Date
   }
 });
-
 
 module.exports = mongoose.model('Score', ScoreSchema);
