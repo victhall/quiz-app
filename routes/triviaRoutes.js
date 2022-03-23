@@ -8,7 +8,7 @@ const { isLoggedIn, isOwner, catchAsync } = require('../helpers')
 
 //index
 router.get('/', catchAsync(async (req, res) => {
-  const trivias = await Trivia.find({})
+  const trivias = await Trivia.find({is_public: true});
   res.render('trivia/index', { trivias })
 }));
 
@@ -77,9 +77,20 @@ router.put('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {
 router.get('/:id', catchAsync(async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id)
-  // console.log(trivia)
-  res.render('trivia/show', { trivia })
+  console.log(trivia.is_public);
+  const currentUser = JSON.stringify(req.user._id)
+  const triviaOwner = JSON.stringify(trivia.owner)
+
+  if (trivia.is_public === false && currentUser !== triviaOwner) {
+    res.send('you do not have access to this trivia')
+  } else {
+    res.render('trivia/show', { trivia })
+  }
+
+//http://localhost:3000/trivia/623b52f42e8fe624349e890e
 }));
+
+
 
 //
 router.get('/:id/play', catchAsync(async (req, res) => {

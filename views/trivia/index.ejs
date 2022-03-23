@@ -15,20 +15,21 @@
   <%- include('../../views/partials/navbar.ejs') %>
 
   <%for (let trivia of trivias) {%>
-    <div>
-      <a href="/trivia/<%=trivia._id%>/">
-        <%=trivia.title %>
-      </a>
-      <% if (currentUser && trivia.owner.equals(currentUser._id)) {%>
-      <a href="/trivia/<%=trivia._id%>/edit">
-        EDIT QUIZ
-      </a>
-      <% } %>
-      <div>
-        <%=trivia.description %>
-      </div>
-    </div>
-    <% } %>
+    
+        <div>
+          <a href="/trivia/<%=trivia._id%>/">
+            <%=trivia.title %>
+          </a>
+          <% if (currentUser && trivia.owner.equals(currentUser._id)) {%>
+            <a href="/trivia/<%=trivia._id%>/edit">
+              EDIT QUIZ
+            </a>
+            <% } %>
+              <div>
+                <%=trivia.description %>
+              </div>
+        </div>
+        <% } %>
 </body>
 
 </html>
