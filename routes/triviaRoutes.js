@@ -77,7 +77,7 @@ router.put('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {
 router.get('/:id', catchAsync(async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id)
-  console.log(trivia.is_public);
+
   const currentUser = JSON.stringify(req.user._id)
   const triviaOwner = JSON.stringify(trivia.owner)
 
@@ -86,8 +86,6 @@ router.get('/:id', catchAsync(async (req, res) => {
   } else {
     res.render('trivia/show', { trivia })
   }
-
-//http://localhost:3000/trivia/623b52f42e8fe624349e890e
 }));
 
 

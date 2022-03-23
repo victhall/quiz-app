@@ -13,7 +13,23 @@
   <%- include('../../views/partials/navbar.ejs') %>
 
   <h1><%= trivia.title %> Score Page</h1>
+
   <%= count %>/<%= correctAnswers.length %>
   <%= (count/correctAnswers.length)*100 %>%
+
+  <% if (count < 6){  %> 
+    <h2>A for Effort</h2>
+    <a href="/trivia/<%=trivia._id%>/play">Try Again</a>
+  <% }  %> 
+  <% if (count < 8 && count >= 6){  %> 
+    <h2>Good Job, You Know Your Stuff!</h2>
+    <a href="/trivia/<%=trivia._id%>/play">Try Again</a>
+  <% }  %> 
+  <% if (count === 8){  %> 
+    <h2>Wow! You're a Superstar!</h2>
+    <a href="/trivia/<%=trivia._id%>/play">Try Again</a>
+  <% }  %> 
+
 </body>
 </html>
+
