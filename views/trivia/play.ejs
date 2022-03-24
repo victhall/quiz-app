@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Document</title>
 
   <link rel="stylesheet" href="/styles/navbar.css">
@@ -20,9 +21,9 @@
     <div>
       <%= question.question %>
     </div>
-    <form action="/trivia/<%=trivia._id%>/play" method="POST">
+    <form action="/trivia/<%=trivia._id%>/play" method="POST" novalidate class="validate-form">
       <%for (let option of question.options) {%>
-        <input type="radio" name="<%= question._id%>" value="<%= option%>">
+        <input type="radio" name="<%= question._id%>" value="<%= option%>" required>
         <%= option %>
           </input>
           <% }%>
@@ -32,6 +33,7 @@
             <button>Submit</button>
     </form>
 
+  <script src="/validateForms.js"></script>
 
 
 </body>
