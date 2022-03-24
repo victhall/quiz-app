@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Trivia = require('./trivia');
 
 const QuestionSchema = new Schema({
   question: {
