@@ -8,7 +8,7 @@ const { isLoggedIn, isOwner, catchAsync } = require('../helpers')
 
 //index
 router.get('/', catchAsync(async (req, res) => {
-  const trivias = await Trivia.find({is_public: true});
+  const trivias = await Trivia.find({ is_public: true });
   res.render('trivia/index', { trivias })
 }));
 
@@ -80,7 +80,9 @@ router.get('/:id', catchAsync(async (req, res) => {
 
   const currentUser = JSON.stringify(req.user._id)
   const triviaOwner = JSON.stringify(trivia.owner)
-
+  console.log('trivia', trivia)
+  console.log('currentUser', req.user._id)
+  console.log('triviaOwner', trivia.owner)
   if (trivia.is_public === false && currentUser !== triviaOwner) {
     res.send('you do not have access to this trivia')
   } else {
@@ -123,14 +125,14 @@ router.post('/:id/play', catchAsync(async (req, res, next) => {
   })
 
   console.log('SCORE------', scores)
-  console.log('points------', scores.achievements) 
+  console.log('points------', scores.achievements)
   // console.log('correct asnwers', correctAnswers)
   res.render('trivia/score', { trivia, count, correctAnswers, scores })
 }));
 
 router.delete('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {
   const { id } = req.params;
-  await Question.deleteMany({triviaId: id})
+  await Question.deleteMany({ triviaId: id })
   await Trivia.findByIdAndDelete(id);
   res.redirect('/trivia');
 }));

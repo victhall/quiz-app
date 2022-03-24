@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Trivias</title>
+
+  <link rel="stylesheet" href="/styles/navbar.css">
+
+</head>
+<body>
+  <%- include('../../views/partials/navbar.ejs') %>
+
+<section class=''>
+  <h2>Public Quizzes</h2>
+
+  <% for (let publicTrivia of publicTrivias){ %> 
+    <a href="/trivia/<%=publicTrivia._id%>"><%= publicTrivia.title %></a>
+    <% } %>
+  <% if (publicTrivias.length === 0){ %> 
+      <h2>no quizzes</h2>
+      <a href="/trivia/new">Create a New Trivia</a>
+    <% } %> 
+</section>
+
+<section class=''>
+  <h2>Private Quizzes</h2>
+
+  <% for (let privateTrivia of privateTrivias){ %> 
+    <a href="/trivia/<%=privateTrivia._id%>"><%= privateTrivia.title %></a>
+    <% } %>
+  <% if (privateTrivias.length === 0){ %> 
+      <h2>no quizzes</h2>
+      <a href="/trivia/new">Create a New Trivia</a>
+
+    <% } %> 
+</section>
+
+
+
+</body>
+</html>

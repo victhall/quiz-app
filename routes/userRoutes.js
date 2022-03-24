@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/users');
+const Trivia = require('../models/trivia')
+const Question = require('../models/questions')
 const { catchAsync } = require('../helpers')
 
 router.get('/register', catchAsync(async (req, res) => {
@@ -36,6 +38,21 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
 router.get('/logout', catchAsync(async (req, res) => {
   req.logout();
   res.redirect('/trivia');
+}));
+
+router.get('/trivias', catchAsync(async (req, res) => {
+  const publicTrivias = await Trivia.find({ owner: req.user._id, is_public: true })
+  const privateTrivias = await Trivia.find({ owner: req.user._id, is_public: false })
+
+console.log('public', publicTrivias.length)
+console.log('private', privateTrivias.length)
+
+  if (publicTrivias || privateTrivias) {
+    res.render('users/trivias', { publicTrivias, privateTrivias});
+  } else {
+    res.send('no quizzes found')
+  }
+
 }));
 
 module.exports = router;
