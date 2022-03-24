@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Score</title>
+
+  <link rel="stylesheet" href="/styles/navbar.css">
+
+</head>
+<body>
+  <%- include('../../views/partials/navbar.ejs') %>
+  <img src=<%= trivia.image %> alt="">
+  <h1><%= trivia.title %> Score Page</h1>
+
+  <%= count %>/<%= correctAnswers.length %>
+  <%= (count/correctAnswers.length)*100 %>%
+
+  <% if (count < 6){  %> 
+    <h2>A for Effort</h2>
+    <a href="/trivia/<%=trivia._id%>/play">Try Again</a>
+  <% }  %> 
+  <% if (count < 8 && count >= 6){  %> 
+    <h2>Good Job, You Know Your Stuff!</h2>
+    <a href="/trivia/<%=trivia._id%>/play">Try Again</a>
+  <% }  %> 
+  <% if (count === 8){  %> 
+    <h2>Wow! You're a Superstar!</h2>
+    <a href="/trivia">Go Back to Trivias</a>
+  <% }  %> 
+
+</body>
+</html>
+

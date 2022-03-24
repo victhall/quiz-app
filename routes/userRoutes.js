@@ -4,7 +4,7 @@ const passport = require('passport');
 const User = require('../models/users');
 const Trivia = require('../models/trivia')
 const Question = require('../models/questions')
-const { catchAsync } = require('../helpers')
+const { catchAsync, isLoggedIn } = require('../helpers')
 
 router.get('/register', catchAsync(async (req, res) => {
   res.render('users/register')
@@ -21,7 +21,8 @@ router.post('/register', catchAsync(async (req, res) => {
       res.redirect('/trivia')
     })
   } catch (e) {
-    res.redirect('/register')
+    req.flash('error', e.message)
+    res.redirect('/users/register')
   }
 }));
 
@@ -29,7 +30,7 @@ router.get('/login', catchAsync(async (req, res) => {
   res.render('users/login')
 }));
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
+router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/users/login' }), (req, res) => {
   const redirectUrl = req.session.returnTo || '/trivia';
   delete req.session.returnTo;
   res.redirect(redirectUrl);
@@ -40,7 +41,7 @@ router.get('/logout', catchAsync(async (req, res) => {
   res.redirect('/trivia');
 }));
 
-router.get('/trivias', catchAsync(async (req, res) => {
+router.get('/trivias', isLoggedIn, catchAsync(async (req, res) => {
   const publicTrivias = await Trivia.find({ owner: req.user._id, is_public: true })
   const privateTrivias = await Trivia.find({ owner: req.user._id, is_public: false })
 

@@ -8,6 +8,8 @@ const engine = require('ejs-mate');
 const passport = require('passport');
 const localStrategy = require('passport-local');
 const User = require('./models/users');
+const flash = require('connect-flash');
+const ExpressError = require('./ExpressError')
 
 
 mongoose.connect('mongodb://localhost:27017/quiz-app', {
@@ -31,6 +33,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
+
 
 const sessionConfig = {
   secret: 'boogalooshrimp',
@@ -60,6 +64,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
+  res.locals.success = req.flash('success')
+  res.locals.error = req.flash('error');
   next();
 });
 
@@ -72,12 +78,20 @@ app.use('/trivia', triviaRouter);
 app.use('/users', usersRouter);
 app.use('/results', resultsRouter);
 
+// app.all('*', (req, res, next) => {
+//   next(new ExpressError('Page Not Found', 404))
+// })
+
+//custom error-handling middleware function. 
+//overthrows express' default error handling 
+//next(err) passes to here
+app.use((err, req, res, next) => {
+  const { statusCode = 500 } = err;
+  if (!err.message) err.message = 'Something went wrong';
+  res.status(statusCode).render('error', { err });
+})
 
 const PORT = 3000;
-
-app.get('/', (req, res) => {
-  res.render('home')
-});
 
 app.listen(PORT, () => {
   console.log('Serving on port 3000')

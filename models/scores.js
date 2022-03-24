@@ -12,7 +12,8 @@ const ScoreSchema = new Schema({
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    default: '12345'
   },
   triviaTitle: {
     type: String

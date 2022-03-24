@@ -36,6 +36,7 @@ router.post('/new', isLoggedIn, catchAsync(async (req, res) => {
     { question: req.body.question8, options: req.body.options8, correct_option: req.body.correct_option8, triviaId: trivia._id },
   ])
   await trivia.save();
+  req.flash('success', 'You\'ve successfully made a new trivia!');
   res.redirect(`/trivia/${trivia._id}`);
 }))
 
@@ -44,6 +45,9 @@ router.get('/:id/edit', isLoggedIn, isOwner, catchAsync(async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id);
   const questions = await Question.find({ triviaId: id });
+  if (!trivia) {
+    req.flash('error', 'Cannot find that trivia.')
+  }
   res.render('trivia/edit', { trivia, questions })
 }));
 
@@ -70,6 +74,7 @@ router.put('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {
   Question.findByIdAndUpdate(example8, { $set: { question: req.body.question8, options: req.body.options8, correct: req.body.correct_options8 } }).exec();
 
   await trivia.save();
+  req.flash('success', 'Successfully updated trivia!');
   res.redirect(`/trivia/${trivia._id}`);
 }));
 
@@ -78,21 +83,10 @@ router.get('/:id', catchAsync(async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id)
 
-  const currentUser = JSON.stringify(req.user._id)
-  const triviaOwner = JSON.stringify(trivia.owner)
-  console.log('trivia', trivia)
-  console.log('currentUser', req.user._id)
-  console.log('triviaOwner', trivia.owner)
-  if (trivia.is_public === false && currentUser !== triviaOwner) {
-    res.send('you do not have access to this trivia')
-  } else {
-    res.render('trivia/show', { trivia })
-  }
+  res.render('trivia/show', { trivia })
 }));
 
-
-
-//
+//play
 router.get('/:id/play', catchAsync(async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id);
@@ -101,6 +95,7 @@ router.get('/:id/play', catchAsync(async (req, res) => {
   res.render('trivia/play', { questions, trivia })
 }));
 
+//submit play
 router.post('/:id/play', catchAsync(async (req, res, next) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id);
@@ -116,6 +111,9 @@ router.post('/:id/play', catchAsync(async (req, res, next) => {
   console.log(result);
   const count = result.filter(Boolean).length;
 
+  if (!req.isAuthenticated()){
+    res.render('trivia/score', { trivia, count, correctAnswers })
+  } else {
   const scores = await Score.create({
     achievements: count,
     triviaId: id,
@@ -123,17 +121,16 @@ router.post('/:id/play', catchAsync(async (req, res, next) => {
     triviaTitle: trivia.title,
     date: new Date
   })
-
-  console.log('SCORE------', scores)
-  console.log('points------', scores.achievements)
-  // console.log('correct asnwers', correctAnswers)
   res.render('trivia/score', { trivia, count, correctAnswers, scores })
+}
+
 }));
 
 router.delete('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {
   const { id } = req.params;
-  await Question.deleteMany({ triviaId: id })
+  await Question.deleteMany({ triviaId: id });
   await Trivia.findByIdAndDelete(id);
+  req.flash('success', 'Successfully deleted trivia.')
   res.redirect('/trivia');
 }));
 
