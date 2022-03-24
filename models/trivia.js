@@ -15,6 +15,10 @@ const TriviaSchema = new Schema({
 		default: true,
 		required: true
 	},
+	image: {
+		type: String,
+		require: true
+	},
 	owner: {
 		type: Schema.Types.ObjectId,
 		ref: 'User'

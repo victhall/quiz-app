@@ -20,6 +20,7 @@
           <a href="/trivia/<%=trivia._id%>/">
             <%=trivia.title %>
           </a>
+          <img src=<%= trivia.image %> alt="">
           <% if (currentUser && trivia.owner.equals(currentUser._id)) {%>
             <a href="/trivia/<%=trivia._id%>/edit">
               EDIT QUIZ

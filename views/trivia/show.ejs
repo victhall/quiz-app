@@ -13,6 +13,9 @@
   <%- include('../../views/partials/navbar.ejs') %>
 
   <h1>TRIVIA PAGE</h1>
+
+  <img src=<%= trivia.image %> alt="">
+
     <%= trivia.title %>
     <%= trivia.description %>
     <a href="/trivia/<%=trivia._id%>/play">Take the quiz</a>
