@@ -1,28 +1,29 @@
 <nav>
 
   <div class="left">
-    <a href="/trivia">Explore Quizzes</a>
+    <a href="/trivia">EXPLORE</a>
 
     <div class="dropdown">
-      <button class="dropbtn">My Trivia Library</button>
+      <a class="dropbtn">TRIVIA LIBRARY</a>
       <div class="dropdown-content">
-        <a href="/users/trivias">All Trivia Quizzes</a>
-        <a href="/trivia/new">Create</a>
+        <a href="/users/trivias">All Quizzes</a>
         <a href="/results">Results</a>
       </div>
-    </div>
+    </div>        
+    <a href="/trivia/new">CREATE</a>
+
   </div>
 
   <div class="center">
-    <a href="/">Quiz-App</a>
+    <a class="app-name" href="/">QUIZZY</a>
 
 
   </div>
 
   <div class="right">
     <% if(!currentUser) {%>
-      <a class="nav-link" href="/users/login">Login</a>
-      <a class="nav-link" href="/users/register">Register</a>
+      <a class="nav-link" href="/users/login">SIGN IN <i class="fa-regular fa-user"></i>
+      </a>
       <%} else {%>
         <a class="nav-link" href="/users/logout">Logout</a>
         <% } %>

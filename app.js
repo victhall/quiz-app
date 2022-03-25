@@ -91,7 +91,12 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render('error', { err });
 })
 
+
 const PORT = 3000;
+
+app.get('/', (req, res) => {
+  res.render('home')
+});
 
 app.listen(PORT, () => {
   console.log('Serving on port 3000')
