@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@400;500&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&family=Roboto&display=swap" rel="stylesheet">
 
 
 <script src="https://kit.fontawesome.com/08bcc62d8b.js" crossorigin="anonymous"></script>
@@ -19,11 +19,23 @@
   <title>Home</title>
 
   <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/home.css">
 </head>
-<body>
-  <%- include('../views/partials/navbar.ejs') %>
-  <h1>Home Page</h1>
-  <a href="/trivia">Explore Trivia Quizzes</a>
-  <a href="/trivia/new">Create New Quiz</a>
+<body class="body-home">
+
+    <div class="home-text">
+      <h1>Make quizzes, take quizzes. Quizzy is a simple quiz builder <br>
+        that can be used as a learning tool, party game, 
+        <br> or anything else you may need a quiz for.
+      </h1>
+      
+    </div>
+  
+      <div class="explore">  
+        <a class="explore-text" href="/trivia">Explore</a>
+      </div>
+    
+
+
 </body>
 </html>

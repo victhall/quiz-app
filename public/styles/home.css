@@ -1,0 +1,58 @@
+.body-home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%);
+}
+
+.explore{
+  border: 1px solid white;
+  background-color: white;
+  padding: 13px 25px;
+  border-radius: 25px;
+  margin-bottom: 40px;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.explore:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.explore-text{
+	padding-left: 0px;
+color: #f88948;
+letter-spacing: .8px;
+}
+.explore-text:hover{
+color: #f88948;
+}
+
+.home-text{
+	text-align: center;
+
+}
+h1{
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.5em;
+	font-weight: 100;
+	color: white;
+	line-height: 30px;
+	padding: 12px;
+}
+
+
+
+

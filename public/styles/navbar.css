@@ -1,21 +1,22 @@
+
 nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 30px 20px;
+  padding: 30px 30px 25px;
 background-color: white;
 font-family: 'Poppins', sans-serif;
 font-weight: 500;
 
 -webkit-box-shadow: -2px -1px 15px 7px rgba(0,0,0,0.5);
 -moz-box-shadow: -3px -2px 30px 14px rgba(0,0,0,0.425);
-box-shadow: -4px -3px 30px 7px #c5c5c53a;
+box-shadow: -4px -3px 30px 7px #3667db94;
 }
 
 /* Dropdown Button */
 .dropbtn {
-  color: black;
+  color: #24272a;
   font-size: 14px;
   border: none;
 }
@@ -24,6 +25,7 @@ box-shadow: -4px -3px 30px 7px #c5c5c53a;
 .dropdown {
   position: relative;
   display: inline-block;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -33,13 +35,16 @@ box-shadow: -4px -3px 30px 7px #c5c5c53a;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  background-color: white;
+  padding: 8px;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  color: #24272a;
   text-decoration: none;
   display: block;
+  padding: 3px;
 }
 
 /* Change color of dropdown links on hover */
@@ -59,29 +64,33 @@ box-shadow: -4px -3px 30px 7px #c5c5c53a;
 }
 a{
   text-decoration: none;
-  color: black;
+  color: #24272a;
   font-size: 14px;
   padding-left: 15px;
   letter-spacing: 2px;
 }
 a:hover{
   text-decoration: none;
-  color: rgb(248, 142, 20);
+  color: #f1584b;
 }
 
 .nav-link{
   text-decoration: none;
-  color: black;
+  color: #24272a;
 }
 .nav-link:hover{
   text-decoration: none;
-  color: rgb(248, 142, 20);
+  color: #f1584b;
 }
 .app-name{
 padding-left: 0px;
-font-size: 26px;
-font-family: 'Changa', sans-serif;
+font-size: 23px;
+font-family: 'Roboto', sans-serif;
 font-weight: 700;
+color: #24272a;
+}
+.app-name:hover{
+color: #24272a;
 }
 
 .center{
