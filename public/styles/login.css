@@ -1,0 +1,79 @@
+.body-login{
+background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  color: #000F08;
+  font-size: 18px;
+  border-bottom: 1px solid #000F08;
+  padding-bottom: 20px;
+
+}
+
+.logindiv {
+  padding-bottom: 40px;
+}
+
+input#username.form-control {
+  border-radius: 0;
+  border: none;
+  padding: 13px;
+  width: 360px;
+}
+input#password.form-control {
+  border-radius: 0;
+  border: none;
+  padding: 13px;
+}
+
+#signin-btn {
+  border-radius: 0;
+  border: none;
+  background-color: white;
+  color: #000F08;
+  width: 100%;
+  letter-spacing: .8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+div.create-acc {
+  margin-top: 20px;
+  margin-bottom: 120px;
+
+}
+
+.create-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0;
+  padding-left: 0;
+}
+
+
+input#password.form-control::placeholder {
+color: #f88948;
+font-family: 'Poppins', sans-serif;
+font-weight: 100;
+}
+
+input#username.form-control::placeholder {
+  color: #f88948;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+}
