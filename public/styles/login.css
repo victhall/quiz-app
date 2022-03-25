@@ -24,7 +24,14 @@ input#username.form-control {
   padding: 13px;
   width: 360px;
 }
+
 input#password.form-control {
+  border-radius: 0;
+  border: none;
+  padding: 13px;
+}
+
+input#email.form-control {
   border-radius: 0;
   border: none;
   padding: 13px;
@@ -55,7 +62,6 @@ input#password.form-control {
 div.create-acc {
   margin-top: 20px;
   margin-bottom: 120px;
-
 }
 
 .create-text {
@@ -71,6 +77,12 @@ color: #f88948;
 font-family: 'Poppins', sans-serif;
 font-weight: 100;
 }
+
+input#email.form-control::placeholder {
+  color: #f88948;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  }
 
 input#username.form-control::placeholder {
   color: #f88948;
