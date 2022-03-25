@@ -1,0 +1,5 @@
+.form-check{
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+}

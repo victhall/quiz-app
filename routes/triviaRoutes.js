@@ -108,7 +108,7 @@ router.post('/:id/play', catchAsync(async (req, res, next) => {
   let result = answer.map((item, i) => {
     return item === correctAnswers[i];
   });
-  console.log(result);
+  console.log(answer);
   const count = result.filter(Boolean).length;
 
   if (!req.isAuthenticated()){
