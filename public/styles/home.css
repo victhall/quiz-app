@@ -27,8 +27,9 @@
 }
 
 .explore:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .explore-text{
@@ -36,14 +37,15 @@
 color: #f88948;
 letter-spacing: .8px;
 }
+
 .explore-text:hover{
 color: #f88948;
 }
 
 .home-text{
 	text-align: center;
-
 }
+
 h1{
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.5em;
