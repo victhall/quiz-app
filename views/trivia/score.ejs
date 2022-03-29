@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,58 @@
   <title>Trivia Score</title>
 
   <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/score.css">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
+
 <body>
-  <%- include('../../views/partials/navbar.ejs') %>
-  <img src=<%= trivia.image %> alt="">
-  <h1><%= trivia.title %> Score Page</h1>
+  <!-- <%- include('../../views/partials/navbar.ejs') %> -->
 
-  <%= count %>/<%= correctAnswers.length %>
-  <%= (count/correctAnswers.length)*100 %>%
+  <section class="score-con">
+    <section class="score-info">
 
-  <% if (count < 6){  %> 
-    <h2>A for Effort</h2>
-    <a href="/trivia/<%=trivia._id%>/play">Try Again</a>
-  <% }  %> 
-  <% if (count < 8 && count >= 6){  %> 
-    <h2>Good Job, You Know Your Stuff!</h2>
-    <a href="/trivia/<%=trivia._id%>/play">Try Again</a>
-  <% }  %> 
-  <% if (count === 8){  %> 
-    <h2>Wow! You're a Superstar!</h2>
-    <a href="/trivia">Go Back to Trivias</a>
-  <% }  %> 
+      <% if (count < 6){ %>
+        <h2>A for Effort</h2>
+        <div class="score1">
+          You scored: <%= count %>/<%= correctAnswers.length %>
+        </div>
+        <div class="score2">
+          <%= (count/correctAnswers.length)*100 %>%
+        </div>
+        <a class="back-btn" href="/trivia/<%=trivia._id%>/play">Try Again</a>
+        <% } %>
+          <% if (count < 8 && count>= 6){ %>
+            <h2>Good Job, You Know Your Stuff!</h2>
+            <div class="score1">
+              You scored: <%= count %>/<%= correctAnswers.length %>
+            </div>
+            <div class="score2">
+              <%= (count/correctAnswers.length)*100 %>%
+            </div>
+            <a class="back-btn" href="/trivia/<%=trivia._id%>/play">Try Again</a>
+            <% } %>
+              <% if (count===8){ %>
+                <h2>Wow! You're a Superstar!</h2>
+                <div class="score1">
+                  You scored: <%= count %>/<%= correctAnswers.length %>
+                </div>
+                <div class="score2">
+                  <%= (count/correctAnswers.length)*100 %>%
+                </div>
+                <a class="back-btn" href="/trivia">Go Back to Trivias</a>
+                <% } %>
 
+    </section>
+    <section class="title-img">
+      <h1>
+        <%= trivia.title %>
+      </h1>
+      <div class="triviaimg-div">
+        <img class="triv-img" src=<%=trivia.image %> alt="">
+      </div>
+      </section>
+
+  </section>
 </body>
-</html>
 
+</html>
