@@ -1,7 +1,7 @@
 body{
   height: 100vh;
-  background: rgb(252,192,151);
-background: linear-gradient(93deg, rgba(252,192,151,1) 19%, rgba(254,255,182,1) 100%);
+  background-color: #FBAB7E;
+  background: linear-gradient(93deg, #f88948 19%, #F7CE68 100%);
 }
 
 .quizzes{
@@ -16,8 +16,8 @@ padding-bottom: 60px;
   padding: 25px 20px 15px;
   border: 1px solid transparent;
   border-radius: 10px;
-  background: rgb(250, 169, 115);
-background: linear-gradient(93deg, rgb(243, 168, 118) 19%, rgb(254, 255, 172) 100%);
+  background-color: #FBAB7E;
+  background: linear-gradient(93deg, #f39e6d 19%, #F7CE68 100%);
 background-size: 125% 100%;
 background-position-x: -10px;
 box-shadow: 5px 2px 20px 1px #3535353d;

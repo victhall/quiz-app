@@ -7,38 +7,46 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&family=Roboto&display=swap" rel="stylesheet">
   <title>My Trivias</title>
 
   <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/trivias.css">
 
 </head>
+<!-- <%- include('../../views/partials/navbar.ejs') %> -->
 <body>
-  <%- include('../../views/partials/navbar.ejs') %>
 
-<section class=''>
+<section class='quizzes'>
   <h2>Public Quizzes</h2>
 
   <% for (let publicTrivia of publicTrivias){ %> 
-    <a href="/trivia/<%=publicTrivia._id%>"><%= publicTrivia.title %></a>
-    <% } %>
+    <div class="quiz">
+      <span>&#8226;</span>
+      <a class="indiv-quiz" href="/trivia/<%=publicTrivia._id%>"><%= publicTrivia.title %></a>
+    </div>
+      <% } %>
   <% if (publicTrivias.length === 0){ %> 
       <h2>no quizzes</h2>
-      <a href="/trivia/new">Create a New Trivia</a>
+      <a class="indiv-quiz" href="/trivia/new">Create a New Trivia</a>
     <% } %> 
 </section>
 
-<section class=''>
+<section class='quizzes'>
   <h2>Private Quizzes</h2>
 
+  
   <% for (let privateTrivia of privateTrivias){ %> 
-    <a href="/trivia/<%=privateTrivia._id%>"><%= privateTrivia.title %></a>
-    <% } %>
-  <% if (privateTrivias.length === 0){ %> 
-      <h2>no quizzes</h2>
-      <a href="/trivia/new">Create a New Trivia</a>
-
-    <% } %> 
+    <div class="quiz">
+      <span>&#8226;</span>
+      <a class="indiv-quiz" href="/trivia/<%=privateTrivia._id%>"><%= privateTrivia.title %></a>
+    </div>
+      <% } %>
+      <% if (privateTrivias.length === 0){ %> 
+        <h2>no quizzes</h2>
+        <a class="indiv-quiz" href="/trivia/new">Create a New Trivia</a>
+        
+        <% } %> 
 </section>
 
 
