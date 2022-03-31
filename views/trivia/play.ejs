@@ -7,33 +7,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&family=Roboto&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="/styles/navbar.css">
-<link rel="stylesheet" href="/styles/play.css">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/play.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
-  <%- include('../../views/partials/navbar.ejs') %>
+  <!-- <%- include('../../views/partials/navbar.ejs') %> -->
 
-  <h1>PLAY HERE</h1>
+  <h1>
+    <%= trivia.title %>
+  </h1>
+  <section>
 
-  <% for (let question of questions) {%>
-    <div>
-      <%= question.question %>
-    </div>
-    <form action="/trivia/<%=trivia._id%>/play" method="POST" novalidate class="validate-form" data-toggle="validator">
-      <%for (let option of question.options) {%>
+    <% for (let question of questions) {%>
+      <div class="question">
+        <%= question.question %>
+      </div>
+      <form action="/trivia/<%=trivia._id%>/play" method="POST" novalidate class="validate-form"
+        data-toggle="validator">
+        <%for (let option of question.options) {%>
           <input class="form-check-input" type="radio" name="<%= question._id%>" value="<%= option%>" required>
           <%= option %>
-        </input>
-        <% }%>
-        <div>
-        </div>
-        <%}%>
-      <button>Submit</button>
-    </form>
-    
+            </input>
+            <% }%>
+              <div>
+              </div>
+              <%}%>
+  </section>
+
+ 
+    <button class="submit">Submit</button>
+  
+  </form>
+
 
 
 

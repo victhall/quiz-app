@@ -10,9 +10,9 @@
 
     <!-- Fonts -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/styles/navbar.css">
 <link rel="stylesheet" href="/styles/show.css">
@@ -33,19 +33,24 @@
 
 <div class="play-btn">    
   <a href="/trivia/<%=trivia._id%>/play" class="take-quiz">TAKE THE QUIZ</a></div>
+
+  <section class="edit-delete">
+    <% if (currentUser && trivia.owner.equals(currentUser._id)) {%>
+      <a class="btn" href="/trivia/<%=trivia._id%>/edit">
+        EDIT QUIZ
+      </a>
+      <form action="/trivia/<%=trivia._id%>?_method=DELETE" method="POST">
+        <button class="btn" id="btn">DELETE</button>
+        </form>
+        <% } %>
+      </section>
 </div>
 
 
 <div class="triviaimg-div">    
   <img class="triv-img" src=<%= trivia.image %> alt=""></div>
+  
 </div>
-
-
-    <% if (currentUser && trivia.owner.equals(currentUser._id)) {%>
-    <form action="/trivia/<%=trivia._id%>?_method=DELETE" method="POST">
-      <button>DELETE</button>
-      </form>
-      <% } %>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

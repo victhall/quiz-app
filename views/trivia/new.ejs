@@ -5,9 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/styles/create-form.css">
   <title>New Quiz</title>
 
   <link rel="stylesheet" href="/styles/navbar.css">
@@ -15,365 +24,324 @@
 </head>
 
 <body>
-  <%- include('../../views/partials/navbar.ejs') %>
+  <!-- <%- include('../../views/partials/navbar.ejs') %> -->
 
   <div class="col-6 offset-3">
-    <h1>New Quiz Form</h1>
+    <h1>Create A Quiz</h1>
+    <p>Please remember to fill out all the boxes correctly.</p>
     <form method="POST" action="/trivia/new" novalidate class="validate-form">
-      <section class="form-box">
+      <div class="trivia-form">
+        <section class="form-box">
+          <div class="mb-3">
+            <input type="text" class="form-control" name="title" id="title" placeholder="Quiz Title" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide a valid title.
+            </div>
+          </div>
+        </section>
+
+        <section class="form-box">
+          <div class="mb-3">
+            <textarea class="form-control" name="description" id="description" rows="3"
+              placeholder="Description" required></textarea>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide a valid description.
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <section class="form-box quiz-form">
         <div class="mb-3">
-          <label for="title" class="form-label">Quiz Title</label>
-          <input type="text" class="form-control" name="title" id="title" placeholder="Title" required>
+          <input type="text" class="form-control" name="question" id="question" placeholder="Question 1" required>
           <div class="valid-feedback">
             Looks good!
           </div>
           <div class="invalid-feedback">
-            Please provide a valid title.
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options" id="options" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options" id="options" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options" id="options" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options" id="options" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide four valid options.
+          </div>
+        </div>
+        <div class="mb-3 quiz-form">
+          <input type="text" class="form-control" name="correct_option" id="correct_option" placeholder="Correct Answer"
+            required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
           </div>
         </div>
       </section>
 
-      <section class="form-box">
+      <section class="form-box quiz-form">
         <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
-          <textarea class="form-control" name="description" id="description" rows="3" placeholder="Tell us something about your quiz!" required></textarea>
+          <input type="text" class="form-control" name="question2" id="question2" placeholder="Question 2" required>
           <div class="valid-feedback">
             Looks good!
           </div>
           <div class="invalid-feedback">
-            Please provide a valid description.
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options2" id="options2" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options2" id="options2" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options2" id="options2" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options2" id="options2" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide four valid options.
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="correct_option2" id="correct_option2"
+            placeholder="Correct Answer" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-box quiz-form">
+        <div class="mb-3">
+          <input type="text" class="form-control" name="question3" id="question3" placeholder="Question 3" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options3" id="options3" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options3" id="options3" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options3" id="options3" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options3" id="options3" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a four options.
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="correct_option3" id="correct_option3"
+            placeholder="Correct Answer" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-box quiz-form">
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="question4" id="question4" placeholder="Question 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options4" id="options4" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options4" id="options4" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options4" id="options4" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options4" id="options4" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide four valid options.
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="correct_option4" id="correct_option4"
+            placeholder="Correct Answer" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-box quiz-form">
+        <div class="mb-3">
+          <input type="text" class="form-control" name="question5" id="question5" placeholder="Question 5" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options5" id="options5" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options5" id="options5" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options5" id="options5" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options5" id="options5" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide four valid options.
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="correct_option5" id="correct_option5"
+            placeholder="Correct Answer" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-box quiz-form">
+        <div class="mb-3">
+          <input type="text" class="form-control" name="question6" id="question6" placeholder="Question 6" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options6" id="options6" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options6" id="options6" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options6" id="options6" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options6" id="options6" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide four valid options.
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="correct_option6" id="correct_option6"
+            placeholder="Correct Answer" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-box quiz-form">
+        <div class="mb-3">
+          <input type="text" class="form-control" name="question7" id="question7" placeholder="Question 7" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options7" id="options7" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options7" id="options7" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options7" id="options7" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options7" id="options7" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide four valid options.
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="correct_option7" id="correct_option7"
+            placeholder="Correct Answer" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-box quiz-form">
+        <div class="mb-3">
+          <input type="text" class="form-control" name="question8" id="question8" placeholder="Question 8" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid question.
+          </div>
+        </div>
+        <div class="form-options mb-3">
+          <input type="text" class="form-control" name="options8" id="options8" placeholder="Option 1" required>
+          <input type="text" class="form-control" name="options8" id="options8" placeholder="Option 2" required>
+          <input type="text" class="form-control" name="options8" id="options8" placeholder="Option 3" required>
+          <input type="text" class="form-control" name="options8" id="options8" placeholder="Option 4" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide four valid options.
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="correct_option8" id="correct_option8"
+            placeholder="Correct Answer" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid answer.
           </div>
         </div>
       </section>
 
       <div>
-        <input type="radio" name="is_public" value="true" checked /> Quiz is public
+        <div class="public-options">
+          <input type="radio" name="is_public" value="true" checked /> <span class="radio-option"> Make quiz public
+          </span>
+        </div>
+        <div>
+          <input type="radio" name="is_public" value="false" />
+          <span class="radio-option"> Make quiz private (creates a private quiz with shareable link!) </span>
+        </div>
       </div>
-      <div class="private">
-        <input type="radio" name="is_public" value="false" /> Quiz is private (create a shareable link)
-      </div>
 
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 1</label>
-          <input type="text" class="form-control" name="question" id="question" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options" id="options"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options" id="options"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options" id="options"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options" id="options"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide four valid options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option" id="correct_option" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 2</label>
-          <input type="text" class="form-control" name="question2" id="question2" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options2" id="options2"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options2" id="options2"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options2" id="options2"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options2" id="options2"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide four valid options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option2" id="correct_option2" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 3</label>
-          <input type="text" class="form-control" name="question3" id="question3" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options3" id="options3"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options3" id="options3"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options3" id="options3"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options3" id="options3"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide a four options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option3" id="correct_option3" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 4</label>
-          <input type="text" class="form-control" name="question4" id="question4" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options4" id="options4"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options4" id="options4"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options4" id="options4"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options4" id="options4"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide four valid options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option4" id="correct_option4" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 5</label>
-          <input type="text" class="form-control" name="question5" id="question5" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options5" id="options5"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options5" id="options5"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options5" id="options5"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options5" id="options5"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide four valid options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option5" id="correct_option5" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 6</label>
-          <input type="text" class="form-control" name="question6" id="question6" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options6" id="options6"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options6" id="options6"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options6" id="options6"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options6" id="options6"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide four valid options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option6" id="correct_option6" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 7</label>
-          <input type="text" class="form-control" name="question7" id="question7" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options7" id="options7"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options7" id="options7"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options7" id="options7"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options7" id="options7"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide four valid options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option7" id="correct_option7" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <section class="form-box">
-        <div class="mb-3">
-          <label for="question" class="form-label">Question 8</label>
-          <input type="text" class="form-control" name="question8" id="question8" placeholder="Question" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid question.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="option" class="form-label">Option</label>
-          <input type="text" class="form-control" name="options8" id="options8"
-            placeholder="Option 1" required>
-          <input type="text" class="form-control" name="options8" id="options8"
-            placeholder="Option 2" required>
-          <input type="text" class="form-control" name="options8" id="options8"
-            placeholder="Option 3" required>
-          <input type="text" class="form-control" name="options8" id="options8"
-            placeholder="Option 4" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please provide four valid options.
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="correct_option" class="form-label">Correct Answer</label>
-          <input type="text" class="form-control" name="correct_option8" id="correct_option8" placeholder="Answer" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid answer.
-          </div>
-        </div>
-      </section>
-
-      <button class="mt-5 mb-5 col-6 offset-3">Create</button>
+      <button class="create">Create Quiz</button>
     </form>
   </div>
 
@@ -381,7 +349,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
-    <script src="/validateForms.js"></script>
+  <script src="/validateForms.js"></script>
 
 </body>
 

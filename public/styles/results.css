@@ -1,0 +1,30 @@
+body{
+    background-color: #91dcf9;
+    color: #2a2b76;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.percentage{
+    font-weight: 500;
+    font-size: 20px;
+}
+.score{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.date{
+    margin-bottom: 20px;
+}
+

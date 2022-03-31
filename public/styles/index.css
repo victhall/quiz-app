@@ -1,55 +1,67 @@
 body{
   height: 100vh;
-  background-color: #FBAB7E;
-  background: linear-gradient(93deg, #f88948 19%, #F7CE68 100%);
+  background-color: #91dcf9;
+  color: #444c7d;
+  /* background: linear-gradient(93deg, #f88948 19%, #F7CE68 100%); */
 }
 
 .quizzes{
 margin: 40px 0px;
 padding-bottom: 60px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
 }
 
 .quiz-card{
+  width: 70%;
   display: flex;
   flex-direction: row;
-  margin: 10px 40px;
-  padding: 25px 20px 15px;
-  border: 1px solid transparent;
+  /* margin: 10px 40px; */
+  margin-bottom: 20px;
+  /* padding: 25px 20px 15px; */
+  border: 1.5px solid #000F08;
   border-radius: 10px;
-  background-color: #FBAB7E;
-  background: linear-gradient(93deg, #f39e6d 19%, #F7CE68 100%);
-background-size: 125% 100%;
-background-position-x: -10px;
-box-shadow: 5px 2px 20px 1px #3535353d;
+  background-color: white;
+/* background-size: 125% 100%; */
+/* background-position-x: -10px; */
+/* box-shadow: 5px 2px 20px 1px #3535353d; */
 
 }
 
 .title-img{
   display: flex;
   flex-direction: column;
-  width: 40%;
+  /* width: 40%; */
 }
 
 .description{
-  width: 60%;
-  margin-top: 80px;
-  margin-left: 30px;
+  /* width: 60%; */
+  /* margin-top: 80px;
+  margin-left: 30px; */
   font-family: 'Poppins', sans-serif;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
 }
 
 h1{
   font-family: 'Poppins', sans-serif;
-  font-size: 17px;
+  font-size: 23px;
   font-weight: 500;
+  padding-bottom: 20px;
+  color: #2a2b76;
 }
 
 .btn {
-  border: 1px solid white;
-  background-color: white;
+  border: 1.2px solid #2a2b76;
+  background-color: #2a2b76;
   padding: 10px 20px;
   border-radius: 25px;
   margin: 20px 5px 10px;
   font-size: 12px;
+  color: white;
 
   display: inline-block;
   vertical-align: middle;
@@ -65,6 +77,7 @@ h1{
 .btn:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
+  color: white;
 }
 
 .index-btns{
@@ -76,12 +89,17 @@ h1{
 .triv-img {
   width: 350px;
   height: 300px;
-  border-radius: 5px;
-  box-shadow: 10px 8px 20px 1px #3535353d;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+ 
+  border-right: 1.5px solid #000F08;
+
+  
+  /* box-shadow: 10px 8px 20px 1px #3535353d; */
 }
   .triviaimg-div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 15px;
+    /* padding-left: 15px; */
   }

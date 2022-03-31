@@ -4,32 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+      <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/results.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
   <title>Trivia Score</title>
 
-  <link rel="stylesheet" href="/styles/navbar.css">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-  <%- include('../../views/partials/navbar.ejs') %>
+  <!-- <%- include('../../views/partials/navbar.ejs') %> -->
 
   <% for (let score of scores.reverse()){%>
     <div>
-      <%= score.triviaTitle %>
+      <h2><%= score.triviaTitle %></h2>
     </div>
-    <div>
+    <div class="score">
       <%= score.achievements%>/8 
+      - <span class="percentage"> 
+        <%= (score.achievements/8)*100%>%
+      </span>
     </div>
-    <div>
-      <%= (score.achievements/8)*100%>%
-    </div>
-    <div>
-      Taken on <%= score.date.toString().slice(0,16) %>
-    </div>
-    <div>
-      Taken on <%= score.date.toString().slice(0,16) %>
+    <div class="date">
+      Taken on <strong><%= score.date.toString().slice(0,16) %></strong>
     </div>
   <% }%>
-
 
 
 </body>

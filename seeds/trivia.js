@@ -29,14 +29,14 @@ const seedTrivia = [
   },
   {
     title: 'Do you know your 2000s TV Trivia?',
-    description: 'Good day, and welcome to the beginning of our 2000s TV trivia questions and answers! In this section, you\'ll be tested on 2000s TV across the genres, characters, stats, the who\'s, what\'s when\'s, where\'s and why\'s. Here you will find some super-easy questions, some a little trickier, and some that\'ll have you racking your brains for answers you\'re almost sure you know! But, it\'s all in fun! Ready to play? Let\'s go!',
+    description: 'Good day, and welcome to the beginning of our 2000s TV trivia questions and answers! Ready to play? Let\'s go!',
     is_public: true,
     image:'https://i.ytimg.com/vi/9pjUyyW-1h4/maxresdefault.jpg',
     owner: '623a0200a2613a302a9cd3e9'
   },
   {
     title: 'Think You Know Everything About Family Guy?',
-    description: 'Since 1999, Family Guy has been making fans laugh with hilarious jokes, cutaway gags, and parodies about pop culture. To celebrate over two decades of the animated sitcom, we\'ve come up with a trivia quiz that tests fans\' knowledge of the show.Below, we\'ve compiled some challenging questions from across every season that you\'re going to need to wrack your brain to solve.',
+    description: 'Since 1999, Family Guy has been making fans laugh with hilarious jokes, cutaway gags, and parodies about pop culture. To celebrate over two decades of the animated sitcom, we\'ve come up with a trivia quiz that tests fans\' knowledge of the show.',
     is_public: true,
     image:'https://images.immediate.co.uk/production/volatile/sites/3/2021/02/family-guy-6db2d52.jpg?quality=90&resize=620,413',
     owner: '623a0200a2613a302a9cd3e9'

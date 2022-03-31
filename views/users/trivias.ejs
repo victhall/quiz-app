@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&family=Roboto&display=swap" rel="stylesheet">
-  <title>My Trivias</title>
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+ 
   <link rel="stylesheet" href="/styles/navbar.css">
   <link rel="stylesheet" href="/styles/trivias.css">
+  
+  <title>My Trivias</title>
+
+
 
 </head>
 <!-- <%- include('../../views/partials/navbar.ejs') %> -->
@@ -27,7 +30,7 @@
     </div>
       <% } %>
   <% if (publicTrivias.length === 0){ %> 
-      <h2>no quizzes</h2>
+      <h3>You have no public quizzes</h3>
       <a class="indiv-quiz" href="/trivia/new">Create a New Trivia</a>
     <% } %> 
 </section>
@@ -43,8 +46,8 @@
     </div>
       <% } %>
       <% if (privateTrivias.length === 0){ %> 
-        <h2>no quizzes</h2>
-        <a class="indiv-quiz" href="/trivia/new">Create a New Trivia</a>
+        <h3>You have no private quizzes</h3>
+        <a class="create-quiz" href="/trivia/new">Create a new quiz</a>
         
         <% } %> 
 </section>

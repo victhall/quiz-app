@@ -8,8 +8,11 @@
   <title>Trivia Score</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&family=Poppins:wght@200;300;400;500&family=Roboto&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="/styles/navbar.css">
   <link rel="stylesheet" href="/styles/score.css">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -20,6 +23,9 @@
 
   <section class="score-con">
     <section class="score-info">
+      <h1>
+        <%= trivia.title %>
+      </h1>
 
       <% if (count < 6){ %>
         <h2>A for Effort</h2>
@@ -54,9 +60,7 @@
 
     </section>
     <section class="title-img">
-      <h1>
-        <%= trivia.title %>
-      </h1>
+
       <div class="triviaimg-div">
         <img class="triv-img" src=<%=trivia.image %> alt="">
       </div>

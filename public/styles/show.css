@@ -1,45 +1,56 @@
 .show-body {
 padding: 0 50px;
-background-color: #FBAB7E;
-background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%);
+background-color: #91dcf9;
+color: #444c7d;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 100vh;
+font-family: 'Barlow', sans-serif;
+
 }
 
 h1 {
   font-size: 60px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .trivia-title {
   padding-bottom: 30px;
-  color: #24272a;
+  color: #2a2b76;
+  padding-top: 50px;
 }
 
 .trivia-body {
   display: flex;
   flex-direction: row;
-
+  justify-content: space-between;
+background-color: white;
+border-radius: 10px;
+padding: 0px;
+width: 95%;
+height: 600px;
 }
 
 .take-quiz {
   padding-left: 0px;
   letter-spacing: .8px;
-font-family: Arial, Helvetica, sans-serif;
-color: #000F08;
+color: white;
 font-size: 14px;
+font-weight: 400;
+}
+
+.take-quiz:hover {
+  color: white;
+
 }
 
 .play-btn {
-  border: 1px solid white;
-  background-color: white;
+  border: 1px solid #2a2b76;
+  background-color: #2a2b76;
   padding: 13px 25px;
   border-radius: 25px;
-  margin-bottom: 40px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 
   display: inline-block;
   vertical-align: middle;
@@ -55,31 +66,73 @@ font-size: 14px;
 .play-btn:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .triv-img {
-  width: 550px;
-  height: 500px;
-  border-radius: 5px;
-  box-shadow: 10px 8px 20px 1px #3535353d;}
+  width: 600px;
+  height: 100%;
+
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;  /* border: 1.5px solid #000F08; */
+}
 
 .trivia-desc {
-  font-family: 'Poppins', sans-serif;
 font-size: 18px;
-padding-right: 80px;
+padding-right: 60px;
 padding-bottom: 30px;
 line-height: 2;
 }
 
 .trivia-sec1 {
   width: 50%;
-  padding-right: 20px;
   padding-left: 70px;
 }
 
 .triviaimg-div {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding-left: 80px;
+  justify-content: end;
+  /* padding-left: 80px; */
+  padding: 0px;
+}
+
+.btn {
+  /* border: 1px solid white;
+  background-color: white; */
+  /* border-radius: 25px; */
+  font-size: 12px;
+  padding-left: 10px;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+#btn{
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding-left: 30px;
+  /* padding-right: 30px; */
+margin-bottom: 10px;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+form{
+  padding: 0px;
+  margin: 0px;
+}
+.edit-delete{
+display: flex;
+flex-direction: row;
+justify-content: left;
+width: 90%;
 }

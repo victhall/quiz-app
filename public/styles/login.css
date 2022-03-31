@@ -1,15 +1,15 @@
 .body-login{
-background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%);
+background-color: #91dcf9;
+color: #2a2b76;
+font-family: 'Barlow', sans-serif;
+  /* background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%); */
 }
 
 h1 {
   text-align: center;
-  font-family: 'Poppins', sans-serif;
   font-weight: 100;
-  color: #000F08;
   font-size: 18px;
-  border-bottom: 1px solid #000F08;
+  border-bottom: 1px solid #2a2b76;
   padding-bottom: 20px;
 
 }
@@ -44,7 +44,6 @@ input#email.form-control {
   color: #000F08;
   width: 100%;
   letter-spacing: .8px;
-  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 100;
   padding-top: 2px;
@@ -65,27 +64,29 @@ div.create-acc {
 }
 
 .create-text {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0;
   padding-left: 0;
+  color: #2a2b76;
+}
+
+.create-text:hover {
+  cursor: pointer;
+  color: #2a2b76;
 }
 
 
 input#password.form-control::placeholder {
-color: #f88948;
-font-family: 'Poppins', sans-serif;
+color: #2a2b76;
 font-weight: 100;
 }
 
 input#email.form-control::placeholder {
-  color: #f88948;
-  font-family: 'Poppins', sans-serif;
+  color: #2a2b76;
   font-weight: 100;
   }
 
 input#username.form-control::placeholder {
-  color: #f88948;
-  font-family: 'Poppins', sans-serif;
+  color: #2a2b76;
   font-weight: 100;
 }

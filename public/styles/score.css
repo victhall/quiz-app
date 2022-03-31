@@ -1,19 +1,23 @@
 body{
   height: 100vh;
   background: rgb(252,192,151);
-  background: linear-gradient(93deg, rgba(252,192,151,1) 19%, rgba(254,255,182,1) 100%);}
+  background: linear-gradient(93deg, rgba(252,192,151,1) 19%, rgba(254,255,182,1) 100%);
+  font-family: 'Poppins', sans-serif;
+  margin: 0px 60px;
+}
+
 .score-con{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 
 h1{
   font-size: 35px;
-  margin: 10px 0px 20px;
+  margin: 50px 0px 20px;
   font-family: 'Poppins', sans-serif;
 }
+
 h2{
   font-size: 35px;
 font-style: italic;
