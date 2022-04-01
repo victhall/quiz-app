@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const Questions = require('../models/questions')
+const Questions = require('../models/questions');
 
 mongoose.connect('mongodb://localhost:27017/quiz-app', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 })
     .then(() => {
         console.log('Mongo connection open');
@@ -204,7 +204,7 @@ mongoose.connect('mongodb://localhost:27017/quiz-app', {
       options: ['Best Friends', 'Enemies', 'Lovers', 'Cousins'],
       correct_option: 'Best Friends',
       triviaId: '6247462b2687a930916a05a7'
-    }
+    },
   ];
   
   const seedDB = async () => {

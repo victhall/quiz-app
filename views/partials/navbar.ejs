@@ -1,9 +1,6 @@
 <nav>
-
   <div class="left">
     <div> <a class="nav" href="/trivia">EXPLORE</a></div>
-
-
     <div class="dropdown">
       <a class="dropbtn nav">LIBRARY</a>
       <div class="dropdown-content">
@@ -11,29 +8,25 @@
         <a class="nav" href="/results">RESULTS</a>
       </div>
     </div>
-    <div> 
+    <div>
       <a class="nav" href="/trivia/new">CREATE</a>
     </div>
-
-
   </div>
-
   <div class="center">
     <a id="app-name" class="nav" href="/">QUIZZY</a>
   </div>
-
   <div class="right">
     <% if(!currentUser) {%>
       <a class="nav-link" href="/users/login">SIGN IN</i>
       </a>
       <%} else {%>
         <span class="welcome">WELCOME </span>
-          <span><strong><%=currentUser.username.toUpperCase() %></strong></span> 
+        <span><strong>
+            <%=currentUser.username.toUpperCase() %>
+          </strong></span>
         <a class="nav-link logout" href="/users/logout"> LOGOUT</a>
         <% } %>
-
   </div>
-
 </nav>
 
 <%- include('./flash.ejs') %>

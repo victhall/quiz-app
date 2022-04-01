@@ -4,24 +4,24 @@ const Schema = mongoose.Schema;
 const QuestionSchema = new Schema({
   question: {
     type: String,
-    required: true  
+    required: true,
   },
   options: {
     type: Array,
-    required: true
+    required: true,
   },
   correct_option: {
     type: String,
-    required: true
+    required: true,
   },
   created_at: {
     type: Date,
-    default: Date
+    default: Date,
   },
   triviaId: {
     type: Schema.Types.ObjectId,
-    ref: 'Trivia'
-  }
+    ref: 'Trivia',
+  },
 });
 
 

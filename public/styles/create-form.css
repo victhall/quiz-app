@@ -1,269 +1,269 @@
 body {
-  font-family: 'Barlow', sans-serif;
-  background-color: #91dcf9;
-  /* background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%); */
+	font-family: 'Barlow', sans-serif;
+	background-color: #91dcf9;
+	/* background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%); */
 }
 
-h1{
-  font-size: 40px;
-  margin: 10px 0px;
-  padding: 20px 0px 0px;
-  color: #2b2b6f;
-  font-weight: 300;
+h1 {
+	font-size: 40px;
+	margin: 10px 0px;
+	padding: 20px 0px 0px;
+	color: #2b2b6f;
+	font-weight: 300;
 }
 
 input.form-control {
-  border-radius: 0;
-  border: none;
-  padding: 10px;
-  width: 100%;
+	border-radius: 0;
+	border: none;
+	padding: 10px;
+	width: 100%;
 }
 
 textarea#description.form-control {
-  border-radius: 0;
-  border: none;
-  padding: 13px;
-  width: 100%;
+	border-radius: 0;
+	border: none;
+	padding: 13px;
+	width: 100%;
 }
 
 .create {
-  border-radius: 0;
-  border: none;
-  background-color: white;
-  color: #2b2b6f;
-  width: 100%;
-  letter-spacing: .8px;
-  font-size: 18px;
-  font-weight: 100;
-  margin-top: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 100px;
+	border-radius: 0;
+	border: none;
+	background-color: white;
+	color: #2b2b6f;
+	width: 100%;
+	letter-spacing: .8px;
+	font-size: 18px;
+	font-weight: 100;
+	margin-top: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 100px;
 
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
 }
 
 .create:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 input#options.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 input#options2.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 input#options3.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 input#options4.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 input#options5.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 input#options6.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 input#options7.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 input#options8.form-control {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 div.form-options {
-display: flex;
-flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .quiz-form {
-  margin-bottom: 35px;
+	margin-bottom: 35px;
 }
 
-input#correct_option.form-control{
-  width: 30%;
+input#correct_option.form-control {
+	width: 30%;
 }
-input#correct_option2.form-control{
-  width: 30%;
+input#correct_option2.form-control {
+	width: 30%;
 }
-input#correct_option3.form-control{
-  width: 30%;
+input#correct_option3.form-control {
+	width: 30%;
 }
-input#correct_option4.form-control{
-  width: 30%;
+input#correct_option4.form-control {
+	width: 30%;
 }
-input#correct_option5.form-control{
-  width: 30%;
+input#correct_option5.form-control {
+	width: 30%;
 }
-input#correct_option6.form-control{
-  width: 30%;
+input#correct_option6.form-control {
+	width: 30%;
 }
-input#correct_option7.form-control{
-  width: 30%;
+input#correct_option7.form-control {
+	width: 30%;
 }
-input#correct_option8.form-control{
-  width: 30%;
+input#correct_option8.form-control {
+	width: 30%;
 }
 
 .trivia-form {
-  margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .form-control {
-  font-weight: 100;
+	font-weight: 100;
 }
 
 input#question.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 input#question2.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 input#question3.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 input#question4.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 input#question5.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 input#question6.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 input#question7.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 input#question8.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#title.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 textarea#description.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options2.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options3.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options4.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options5.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options6.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options7.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#options8.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option2.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option3.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option4.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option5.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option6.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option7.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 input#correct_option8.form-control::placeholder {
-  color: #2b2b6f;
-  font-weight: 100;
+	color: #2b2b6f;
+	font-weight: 100;
 }
 
 p {
-  margin-bottom: 50px;
-  color: #2b2b6f;
+	margin-bottom: 50px;
+	color: #2b2b6f;
 }
 
-.radio-option{
-  font-weight: 300;
-  font-size: 15px;
-  color: #2b2b6f;
+.radio-option {
+	font-weight: 300;
+	font-size: 15px;
+	color: #2b2b6f;
 }
 
 ::placeholder {
-  font-family: 'Barlow', sans-serif;
+	font-family: 'Barlow', sans-serif;
 }
