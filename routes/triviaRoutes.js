@@ -23,8 +23,10 @@ router.post('/new', isLoggedIn, catchAsync(async (req, res) => {
     title: req.body.title,
     description: req.body.description,
     is_public: req.body.is_public,
-    owner: req.user._id
+    owner: req.user._id,
+    image: req.body.image,
   })
+  console.log('req,body', req.body)
   Question.insertMany([
     { question: req.body.question, options: req.body.options, correct_option: req.body.correct_option, triviaId: trivia._id },
     { question: req.body.question2, options: req.body.options2, correct_option: req.body.correct_option2, triviaId: trivia._id },
