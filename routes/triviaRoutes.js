@@ -93,7 +93,7 @@ router.get('/:id/play', catchAsync(async (req, res) => {
   const { id } = req.params;
   const trivia = await Trivia.findById(id);
   const questions = await Question.find({ triviaId: id })
-  console.log('questions', questions)
+  // console.log('questions', questions)
   res.render('trivia/play', { questions, trivia })
 }));
 
@@ -105,12 +105,13 @@ router.post('/:id/play', catchAsync(async (req, res, next) => {
   const answer = Object.values(req.body);
   const correctAnswers = [];
   for (let question of questions) {
-    correctAnswers.push(question.correct_option)
+    correctAnswers.push(question.correct_option.toLowerCase())
   }
   let result = answer.map((item, i) => {
-    return item === correctAnswers[i];
+    const answerLowerCase = item.toLowerCase();
+    return answerLowerCase === correctAnswers[i];
   });
-  console.log(answer);
+  console.log(correctAnswers)
   const count = result.filter(Boolean).length;
 
   if (!req.isAuthenticated()){
