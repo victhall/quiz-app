@@ -9,7 +9,9 @@ const passport = require('passport');
 const localStrategy = require('passport-local');
 const User = require('./models/users');
 const flash = require('connect-flash');
-const ExpressError = require('./ExpressError')
+const ExpressError = require('./ExpressError');
+const bodyParser = require('body-parser');
+const mongoSanitize = require('express-mongo-sanitize');
 
 
 mongoose.connect('mongodb://localhost:27017/quiz-app', {
@@ -34,7 +36,9 @@ app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(mongoSanitize());
 
 const sessionConfig = {
   secret: 'boogalooshrimp',
@@ -49,7 +53,6 @@ const sessionConfig = {
       maxAge: 1000 * 60 * 60 * 24 * 7
   }
 }
-
 
 
 app.use(session(sessionConfig));
