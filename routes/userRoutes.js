@@ -45,10 +45,11 @@ router.get('/trivias', isLoggedIn, catchAsync(async (req, res) => {
   const publicTrivias = await Trivia.find({
     owner: req.user._id,
     is_public: true});
+    console.log(publicTrivias)
   const privateTrivias = await Trivia.find({
     owner: req.user._id,
-    s_public: false});
-
+    is_public: false});
+console.log(privateTrivias)
   if (publicTrivias || privateTrivias) {
     res.render('users/trivias', {publicTrivias, privateTrivias});
   } else {

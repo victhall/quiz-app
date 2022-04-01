@@ -253,6 +253,11 @@ input#correct_option8.form-control::placeholder {
 	font-weight: 100;
 }
 
+input#image.form-control::placeholder{
+	color: #2b2b6f;
+	font-weight: 100;
+}
+
 p {
 	margin-bottom: 50px;
 	color: #2b2b6f;
