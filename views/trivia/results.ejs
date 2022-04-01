@@ -16,27 +16,30 @@
     <link rel="stylesheet" href="/styles/results.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-  <title>Trivia Score</title>
+  <title>Results</title>
 
 </head>
 <body>
-  <!-- <%- include('../../views/partials/navbar.ejs') %> -->
+  <%- include('../../views/partials/navbar.ejs') %>
+
+  <div class="result-body">
+    <p>Your most recent quiz results will show below &#8595;</p>
 
   <% for (let score of scores.reverse()){%>
     <div>
-      <h2><%= score.triviaTitle %></h2>
+      <h2><%= score.triviaTitle.toUpperCase() %></h2>
     </div>
     <div class="score">
-      <%= score.achievements%>/8 
+      <%= score.achievements %>/8 
       - <span class="percentage"> 
         <%= (score.achievements/8)*100%>%
       </span>
     </div>
     <div class="date">
-      Taken on <strong><%= score.date.toString().slice(0,16) %></strong>
+      TAKEN ON <strong><%= score.date.toString().slice(0,16).toUpperCase() %></strong>
     </div>
   <% }%>
-
+</div>
 
 </body>
 </html>

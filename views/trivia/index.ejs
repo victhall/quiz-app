@@ -35,13 +35,13 @@
       
       <div class="description">
         <a href="/trivia/<%=trivia._id%>/">
-          <h1><%=trivia.title %></h1>
+          <h1 class="title-text"><%=trivia.title.toUpperCase() %></h1>
         </a>
         <%=trivia.description %>
         <div class="index-btns">
 
             <a class="btn" href="/trivia/<%=trivia._id%>/">
-              Try Quiz
+              TRY QUIZ
             </a>
           </div>
         </div>

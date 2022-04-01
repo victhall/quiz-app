@@ -1,29 +1,35 @@
 <nav>
 
   <div class="left">
-    <a href="/trivia">EXPLORE</a>
+    <div> <a class="nav" href="/trivia">EXPLORE</a></div>
+
 
     <div class="dropdown">
-      <a class="dropbtn">TRIVIA LIBRARY</a>
+      <a class="dropbtn nav">TRIVIA LIBRARY</a>
       <div class="dropdown-content">
-        <a href="/users/trivias">All Quizzes</a>
-        <a href="/results">Results</a>
+        <a class="nav" href="/users/trivias">ALL QUIZZES</a>
+        <a class="nav" href="/results">RESULTS</a>
       </div>
-    </div>        
-    <a href="/trivia/new">CREATE</a>
+    </div>
+    <div> 
+      <a class="nav" href="/trivia/new">CREATE</a>
+    </div>
+
 
   </div>
 
   <div class="center">
-    <a class="app-name" href="/">QUIZZY</a>
+    <a id="app-name" class="nav" href="/">QUIZZY</a>
   </div>
 
   <div class="right">
     <% if(!currentUser) {%>
-      <a class="nav-link" href="/users/login">SIGN IN <i class="fa-regular fa-user"></i>
+      <a class="nav-link" href="/users/login">SIGN IN</i>
       </a>
       <%} else {%>
-        <a class="nav-link" href="/users/logout">Logout</a>
+        <span class="welcome">WELCOME </span>
+          <span><strong><%=currentUser.username.toUpperCase() %></strong></span> 
+        <a class="nav-link logout" href="/users/logout"> LOGOUT</a>
         <% } %>
 
   </div>

@@ -1,13 +1,15 @@
+body {
+  background-color: #91dcf9;
+  color: #444c7d;
+}
+
 .show-body {
-padding: 0 50px;
-background-color: #91dcf9;
-color: #444c7d;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: 100vh;
 font-family: 'Barlow', sans-serif;
+height: 100vh;
 
 }
 
@@ -29,7 +31,7 @@ background-color: white;
 border-radius: 10px;
 padding: 0px;
 width: 95%;
-height: 600px;
+height: 80%;
 }
 
 .take-quiz {
@@ -38,6 +40,7 @@ height: 600px;
 color: white;
 font-size: 14px;
 font-weight: 400;
+text-decoration: none;
 }
 
 .take-quiz:hover {
@@ -101,8 +104,10 @@ line-height: 2;
   /* border: 1px solid white;
   background-color: white; */
   /* border-radius: 25px; */
-  font-size: 12px;
+  font-size: 15px;
   padding-left: 10px;
+  color: red;
+
 
   display: inline-block;
   vertical-align: middle;
@@ -115,9 +120,8 @@ line-height: 2;
 }
 
 #btn{
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding-left: 30px;
+  font-size: 15px;
+  padding-left: 2px;
   /* padding-right: 30px; */
 margin-bottom: 10px;
 }
@@ -125,6 +129,7 @@ margin-bottom: 10px;
 .btn:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
+  color: red;
 }
 form{
   padding: 0px;

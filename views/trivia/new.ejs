@@ -17,17 +17,17 @@
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="/styles/create-form.css">
-  <title>New Quiz</title>
+  <title>Create Quiz</title>
 
   <link rel="stylesheet" href="/styles/navbar.css">
 
 </head>
 
 <body>
-  <!-- <%- include('../../views/partials/navbar.ejs') %> -->
+  <%- include('../../views/partials/navbar.ejs') %>
 
   <div class="col-6 offset-3">
-    <h1>Create A Quiz</h1>
+    <h1>CREATE A QUIZ</h1>
     <p>Please remember to fill out all the boxes correctly.</p>
     <form method="POST" action="/trivia/new" novalidate class="validate-form">
       <div class="trivia-form">
@@ -341,7 +341,7 @@
         </div>
       </div>
 
-      <button class="create">Create Quiz</button>
+      <button class="create">CREATE QUIZ</button>
     </form>
   </div>
 

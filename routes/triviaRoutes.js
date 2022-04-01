@@ -36,7 +36,7 @@ router.post('/new', isLoggedIn, catchAsync(async (req, res) => {
     { question: req.body.question8, options: req.body.options8, correct_option: req.body.correct_option8, triviaId: trivia._id },
   ])
   await trivia.save();
-  req.flash('success', 'You\'ve successfully made a new trivia!');
+  req.flash('success', 'YOU\'VE SUCCESSFULLY CREATED A NEW QUIZ!');
   res.redirect(`/trivia/${trivia._id}`);
 }))
 
@@ -74,7 +74,7 @@ router.put('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {
   Question.findByIdAndUpdate(example8, { $set: { question: req.body.question8, options: req.body.options8, correct: req.body.correct_options8 } }).exec();
 
   await trivia.save();
-  req.flash('success', 'Successfully updated trivia!');
+  req.flash('success', 'SUCCESSFULLY UPDATED QUIZ!');
   res.redirect(`/trivia/${trivia._id}`);
 }));
 
@@ -130,7 +130,7 @@ router.delete('/:id', isLoggedIn, isOwner, catchAsync(async (req, res) => {
   const { id } = req.params;
   await Question.deleteMany({ triviaId: id });
   await Trivia.findByIdAndDelete(id);
-  req.flash('success', 'Successfully deleted trivia.')
+  req.flash('success', 'SUCCESSFULLY DELETED QUIZ')
   res.redirect('/trivia');
 }));
 

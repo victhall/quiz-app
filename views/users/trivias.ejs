@@ -12,45 +12,48 @@
   <link rel="stylesheet" href="/styles/navbar.css">
   <link rel="stylesheet" href="/styles/trivias.css">
   
-  <title>My Trivias</title>
+  <title>My Quizzes</title>
 
 
 
 </head>
-<!-- <%- include('../../views/partials/navbar.ejs') %> -->
 <body>
+  <%- include('../../views/partials/navbar.ejs') %>
+
+  <div class="all-quiz">
 
 <section class='quizzes'>
-  <h2>Public Quizzes</h2>
+  <h2>PUBLIC QUIZZES</h2>
 
-  <% for (let publicTrivia of publicTrivias){ %> 
+  <% for (let publicTrivia of publicTrivias.reverse()){ %> 
     <div class="quiz">
       <span>&#8226;</span>
-      <a class="indiv-quiz" href="/trivia/<%=publicTrivia._id%>"><%= publicTrivia.title %></a>
+      <a class="indiv-quiz" href="/trivia/<%=publicTrivia._id%>"><%= publicTrivia.title.toUpperCase() %></a>
     </div>
       <% } %>
   <% if (publicTrivias.length === 0){ %> 
-      <h3>You have no public quizzes</h3>
+      <h3>YOU HAVE NO PUBLIC QUIZZES</h3>
       <a class="indiv-quiz" href="/trivia/new">Create a New Trivia</a>
     <% } %> 
 </section>
 
 <section class='quizzes'>
-  <h2>Private Quizzes</h2>
+  <h2>PRIVATE QUIZZES</h2>
 
   
-  <% for (let privateTrivia of privateTrivias){ %> 
+  <% for (let privateTrivia of privateTrivias.reverse()){ %> 
     <div class="quiz">
       <span>&#8226;</span>
-      <a class="indiv-quiz" href="/trivia/<%=privateTrivia._id%>"><%= privateTrivia.title %></a>
+      <a class="indiv-quiz" href="/trivia/<%=privateTrivia._id%>"><%= privateTrivia.title.toUpperCase() %></a>
     </div>
       <% } %>
       <% if (privateTrivias.length === 0){ %> 
-        <h3>You have no private quizzes</h3>
-        <a class="create-quiz" href="/trivia/new">Create a new quiz</a>
+        <h3>YOU HAVE NO PRIVATE QUIZZES</h3>
+        <a class="create-quiz" href="/trivia/new">CREATE A NEW QUIZ</a>
         
         <% } %> 
 </section>
+</div>
 
 
 

@@ -1,10 +1,14 @@
 body{
   background-color: #91dcf9;
-  /* background: linear-gradient(93deg, #f88948 19%, #F7CE68 100%); */
-  margin: 60px 40px;
-  font-family: 'Barlow', sans-serif;
-  color: #2a2b76;
   height: 100vh;
+  font-family: 'Barlow', sans-serif;
+  margin: 0;
+}
+
+.all-quiz {
+  margin: 60px 40px;
+
+  color: #2a2b76;
   display: flex;
   flex-direction: row;
 justify-content: space-evenly;
@@ -14,15 +18,15 @@ h3{
   font-size: 20px;
   font-weight: 500;
   font-size: 18px;
-  font-style: italic;
 }
 
 .indiv-quiz{
   font-size: 17px;
   color: #444c7d;
+  text-decoration: none;
 }
 .indiv-quiz:hover{
-color: white;
+color: #ffff00;
 }
 
 
@@ -34,6 +38,8 @@ color: white;
   margin-bottom: 20px;
   margin-top: 20px;
   color: white;
+  font-weight: 100;
+  text-decoration: none;
 
   display: inline-block;
   vertical-align: middle;

@@ -1,12 +1,10 @@
 body{
     background-color: #91dcf9;
     color: #2a2b76;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-weight: 100;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+margin: 0%;
 }
 
 h2{
@@ -28,3 +26,13 @@ h2{
     margin-bottom: 20px;
 }
 
+.result-body {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    padding-top: 40px;
+}
+
+p {
+    font-size: 25px;
+}
