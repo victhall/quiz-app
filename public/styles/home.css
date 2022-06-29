@@ -6,7 +6,6 @@
   height: 100vh;
   background-color: #91dcf9;
   font-family: 'Barlow', sans-serif;
-  /* background-image: linear-gradient(62deg, #f88948 0%, #F7CE68 100%); */
 }
 
 .explore{
@@ -15,6 +14,7 @@
   padding: 13px 25px;
   border-radius: 25px;
   margin-bottom: 40px;
+  text-decoration: none;
 
   display: inline-block;
   vertical-align: middle;
@@ -32,10 +32,11 @@
   transform: scale(1.05);
 }
 
-.explore-text{
-	padding-left: 0px;
+a.explore-text{
+padding-left: 0px;
 color: #2a2b76;
 letter-spacing: .8px;
+text-decoration: none;
 }
 
 .explore-text:hover{

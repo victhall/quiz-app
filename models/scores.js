@@ -4,24 +4,24 @@ const Schema = mongoose.Schema;
 const ScoreSchema = new Schema({
   achievements: {
     type: Number,
-    required: true
+    required: true,
   },
   triviaId: {
     type: Schema.Types.ObjectId,
-    ref: 'Trivia'
+    ref: 'Trivia',
   },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    default: '12345'
+    default: '12345',
   },
   triviaTitle: {
-    type: String
+    type: String,
   },
   date: {
     type: Date,
-    default: Date
-  }
+    default: Date,
+  },
 });
 
 module.exports = mongoose.model('Score', ScoreSchema);
