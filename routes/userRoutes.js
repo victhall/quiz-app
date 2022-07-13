@@ -1,61 +1,28 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const User = require('../models/users');
-const Trivia = require('../models/trivia');
-const {catchAsync, isLoggedIn} = require('../helpers');
+const { catchAsync, isLoggedIn } = require('../helpers');
+//import from controller
+const user = require('../controllers/user');
 
-router.get('/register', catchAsync(async (req, res) => {
-  res.render('users/register');
-}));
+//get register page
+router.get('/register', catchAsync(user.getRegister));
 
-router.post('/register', catchAsync(async (req, res) => {
-  try {
-    const {username, email, password} = req.body;
-    const user = new User({email, username});
-    const registeredUser = await User.register(user, password);
-    req.login(registeredUser, (err) => {
-      if (err)
-        return next(err);
-      res.redirect('/trivia');
-    });
-  } catch (e) {
-    req.flash('error', e.message);
-    res.redirect('/users/register');
-  }
-}));
+//post register form data to db
+router.post('/register', catchAsync(user.postRegister));
 
-router.get('/login', catchAsync(async (req, res) => {
-  res.render('users/login');
-}));
+//get login page
+router.get('/login', catchAsync(user.getLogin));
 
+//post login form
 router.post('/login', passport.authenticate('local',
-    {failureFlash: true, failureRedirect: '/users/login'}), (req, res) => {
-  const redirectUrl = req.session.returnTo || '/trivia';
-  delete req.session.returnTo;
-  res.redirect(redirectUrl);
-});
+  { failureFlash: true, failureRedirect: '/users/login' }), user.postLogin);
 
-router.get('/logout', catchAsync(async (req, res) => {
-  req.logout();
-  res.redirect('/trivia');
-}));
+//logout user
+router.get('/logout', catchAsync(user.logout));
 
-router.get('/trivias', isLoggedIn, catchAsync(async (req, res) => {
-  const publicTrivias = await Trivia.find({
-    owner: req.user._id,
-    is_public: true});
-    console.log(publicTrivias)
-  const privateTrivias = await Trivia.find({
-    owner: req.user._id,
-    is_public: false});
-console.log(privateTrivias)
-  if (publicTrivias || privateTrivias) {
-    res.render('users/trivias', {publicTrivias, privateTrivias});
-  } else {
-    res.send('no quizzes found');
-  }
-}));
+//get all trivias by a user
+router.get('/trivias', isLoggedIn, catchAsync(user.getAllTrivias));
 
 module.exports = router;
 

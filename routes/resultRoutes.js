@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Score = require('../models/scores');
 const {isLoggedIn, catchAsync} = require('../helpers');
+const results = require('../controllers/results')
 
-router.get('/', isLoggedIn, catchAsync(async (req, res) => {
-  const scores = await Score.find({user: req.user._id});
-  res.render('trivia/results', {scores});
-}));
+router.get('/', isLoggedIn, catchAsync(results.getScores));
 
 module.exports = router;
