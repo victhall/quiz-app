@@ -12,7 +12,6 @@ const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 
-
 mongoose.connect('mongodb://localhost:27017/quiz-app', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -81,16 +80,11 @@ app.use('/trivia', triviaRouter);
 app.use('/users', usersRouter);
 app.use('/results', resultsRouter);
 
-// app.all('*', (req, res, next) => {
-//   next(new ExpressError('Page Not Found', 404))
-// })
-
 app.use((err, req, res, next) => {
   const {statusCode = 500} = err;
   if (!err.message) err.message = 'Something went wrong';
   res.status(statusCode).render('error', {err});
 });
-
 
 const PORT = 3000;
 

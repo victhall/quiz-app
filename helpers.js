@@ -1,5 +1,7 @@
 const Trivia = require('./models/trivia');
 
+//checks if a user is logged in 
+//otherwise redirects you to previous page
 const isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     req.session.returnTo = req.originalUrl;
@@ -9,6 +11,8 @@ const isLoggedIn = (req, res, next) => {
   next();
 };
 
+//checks if logged in user is owner of a quiz
+//if not flashes error msg
 const isOwner = async (req, res, next) => {
   const {id} = req.params;
   const trivia = await Trivia.findById(id);
@@ -19,6 +23,7 @@ const isOwner = async (req, res, next) => {
   next();
 };
 
+//async await error handling
 const catchAsync = (func) => {
   return (req, res, next) => {
     func(req, res, next)
